@@ -517,6 +517,60 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
     setTimeout(showAll,1500);
   } else { showAll(); }
 
+
+  // ---- 앵커 부드러운 이동 (rAF 커스텀) ----
+  // 왜 CSS scroll-behavior:smooth 로 부족한가: OS '동작 줄이기'가 켜져 있으면
+  // Chrome/Firefox 가 native smooth scroll(CSS·scrollTo·scrollIntoView)을 전부
+  // 즉시 이동으로 강제한다. rAF 로 직접 그려야 우회된다. (사용자 판단: 전원 강제)
+  (function(){
+    var DUR=700, hdr=document.querySelector('header'), busy=false;
+    function offset(){ return (hdr?hdr.getBoundingClientRect().height:64)+10; }
+    function ease(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+    function go(el, hash){
+      var start=window.pageYOffset;
+      var end=Math.round(el.getBoundingClientRect().top+start-offset());
+      var max=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+      end=Math.max(0,Math.min(end,max));
+      if(Math.abs(end-start)<2){ done(); return; }
+      var t0=null; busy=true;
+      function done(){
+        busy=false;
+        window.removeEventListener('wheel',cancel); window.removeEventListener('touchstart',cancel);
+        if(hash){
+          if(history.replaceState) history.replaceState(null,'',hash); else location.hash=hash;
+          // 키보드/스크린리더용 포커스 이동 (아웃라인은 :focus-visible 만 뜨므로 시각적 변화 없음)
+          var pt=el.getAttribute('tabindex');
+          if(pt===null) el.setAttribute('tabindex','-1');
+          el.focus({preventScroll:true});
+          if(pt===null) el.addEventListener('blur',function h(){el.removeAttribute('tabindex');el.removeEventListener('blur',h);});
+        }
+      }
+      function cancel(){ busy=false; done(); }
+      window.addEventListener('wheel',cancel,{passive:true,once:true});
+      window.addEventListener('touchstart',cancel,{passive:true,once:true});
+      function step(ts){
+        if(!busy) return;
+        if(t0===null) t0=ts;
+        var p=Math.min((ts-t0)/DUR,1);
+        // behavior:'instant' 로 CSS scroll-behavior:smooth 와 충돌 방지
+        window.scrollTo({top:start+(end-start)*ease(p),behavior:'instant'});
+        if(p<1) requestAnimationFrame(step); else done();
+      }
+      requestAnimationFrame(step);
+    }
+    document.addEventListener('click',function(e){
+      var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
+      if(!a) return;
+      var h=a.getAttribute('href');
+      if(!h || h==='#') return;
+      var el;
+      try{ el=document.querySelector(h); }catch(err){ return; }
+      if(!el) return;
+      e.preventDefault();
+      go(el,h);
+    },false);
+  })();
+
   var lb=document.getElementById('lightbox'), lbImg=lb?lb.querySelector('img'):null;
   [].slice.call(document.querySelectorAll('.glink')).forEach(function(a){
     a.addEventListener('click',function(ev){ev.preventDefault();if(lbImg){var th=a.querySelector('img');lbImg.alt=th&&th.alt?th.alt:'';lbImg.src=a.getAttribute('href');lb.classList.add('open');}});
