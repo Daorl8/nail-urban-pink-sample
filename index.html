@@ -21,11 +21,11 @@
 :root{
   --bg:#FBF7F9; --bg2:#F4EAF0; --taupe:#C3B2BC; --card:#FDFAFC;
   --ink:#3E2F38; --ink-soft:#7C6B75; --ink-faint:#B8A7B1;
-  --gold:#C486A0; --gold-mark:#EBC7DA;
+  --gold:#AD7793; --gold-mark:#E0BBD0;
   --cta:#8E4E6E; --cta-dk:#723E58;
   --line:#EEDFE8; --line-soft:#F6EEF3;
   --silver:#C9CDD6; --silver-lt:#E6E9EF;
-  --iri1:#F3C6DD; --iri2:#D9C7F0; --iri3:#C7D0F0; --iri4:#C7EFE0; --iri5:#F6D9C6;
+  --iri1:#B98CA8; --iri2:#8C86AE; --iri3:#7E93A6; --iri4:#6F938C; --iri5:#A98BA0;
   --serif:'Playfair Display','Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --myeong:'Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --script:'Parisienne','Playfair Display','Apple SD Gothic Neo',serif;
@@ -51,7 +51,7 @@ h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
 .mark{background:linear-gradient(180deg,transparent 58%,var(--gold-mark) 58%,var(--gold-mark) 92%,transparent 92%);
   padding:0 .08em}
 .nb{white-space:nowrap}
-.mark-soft{background:linear-gradient(180deg,transparent 56%,rgba(235,180,214,.55) 56%,rgba(203,196,236,.5) 76%,rgba(197,235,222,.46) 92%,transparent 92%)}
+.mark-soft{background:linear-gradient(180deg,transparent 56%,rgba(185,140,168,.5) 56%,rgba(140,134,174,.44) 76%,rgba(126,147,166,.4) 92%,transparent 92%)}
 
 /* specnote */
 .specnote{background:var(--ink);color:#EBDCE5;font-size:12.5px;line-height:1.5;
@@ -95,11 +95,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
 .hero .lead{font-size:clamp(15px,2vw,17px);color:var(--ink-soft);max-width:470px;margin:0 0 34px}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 /* hero aurora / sheen / glitter / holographic (히어로 몰입, 본문 절제) */
-.hero-aurora,.hero-sheen,.hero-glitter{position:absolute;pointer-events:none}
+.hero-aurora,.hero-sheen,.hero-glitter,.hero-mood{position:absolute;pointer-events:none}
 .hero-aurora{inset:-25%;z-index:1;
   background:linear-gradient(115deg,var(--iri1),var(--iri2),var(--iri3),var(--iri4),var(--iri5),var(--iri1));
-  background-size:300% 300%;mix-blend-mode:soft-light;opacity:.9;
+  background-size:300% 300%;mix-blend-mode:overlay;opacity:.82;filter:saturate(1.15) contrast(1.04);
   animation:auroraShift 24s ease-in-out infinite}
+.hero-mood{inset:0;z-index:1;background:linear-gradient(180deg,rgba(48,36,44,0) 42%,rgba(48,36,44,.36) 100%),radial-gradient(130% 100% at 50% -8%,rgba(150,110,135,.12),transparent 55%)}
 .hero-sheen{inset:0;z-index:1;mix-blend-mode:screen;opacity:.6;
   background:radial-gradient(120% 85% at 80% 26%,rgba(255,255,255,.42),rgba(255,255,255,0) 58%)}
 .hero-glitter{inset:0;z-index:3;opacity:.9;
@@ -117,7 +118,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
 @keyframes auroraShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 @keyframes twinkle{0%,100%{opacity:.4}50%{opacity:.95}}
 .hero h1.holo{
-  background:linear-gradient(100deg,#9A4E72 0%,#7E5FA6 26%,#3D8A82 50%,#A85A86 74%,#9A4E72 100%);
+  background:linear-gradient(100deg,#6E4A66 0%,#6E5E8E 24%,#3D7E7A 50%,#8A5676 74%,#6E4A66 100%);
   background-size:220% 100%;-webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
   animation:holoSweep 9s ease-in-out infinite}
@@ -325,6 +326,7 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
     <div class="hero-bg"><img src="nu-hero.jpg" alt="네일어반의 레이스·펄 무드 젤네일 작업물" width="1400" height="1646"></div>
     <div class="hero-aurora" aria-hidden="true"></div>
     <div class="hero-sheen" aria-hidden="true"></div>
+    <div class="hero-mood" aria-hidden="true"></div>
     <div class="hero-scrim"></div>
     <div class="hero-glitter" aria-hidden="true"></div>
     <div class="wrap">
