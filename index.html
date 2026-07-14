@@ -286,7 +286,7 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
 .pl li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-soft);min-width:0}
 .pl li:last-child{border-bottom:0}
 .pl li>span{font-size:15px;color:var(--ink);min-width:0}
-.pl li>span em{font-style:normal;color:var(--ink-faint);font-size:12.5px;margin-left:5px}
+.pl li>span em{font-style:normal;color:var(--ink-soft);font-size:12.5px;margin-left:5px}
 .pl li>b{font-weight:700;font-size:15px;color:var(--cta);display:flex;flex-direction:column;align-items:flex-end;text-align:right;flex:0 0 auto}
 .pl li>b small{font-weight:500;font-size:12px;color:var(--ink-soft)}
 .pl-note{font-size:12.5px;color:var(--ink-soft);margin:16px 0 0;line-height:1.65}
@@ -523,22 +523,23 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
   // Chrome/Firefox 가 native smooth scroll(CSS·scrollTo·scrollIntoView)을 전부
   // 즉시 이동으로 강제한다. rAF 로 직접 그려야 우회된다. (사용자 판단: 전원 강제)
   (function(){
-    var DUR=700, hdr=document.querySelector('header'), busy=false;
+    // seq = 이 호출의 소유권 토큰. busy 같은 공유 불리언을 쓰면 앵커를 연속 클릭했을 때
+    // 두 루프가 동시에 살아 서로 다른 목표로 경합하고, 먼저 끝난 쪽이 나중 것을 죽인다(재진입 버그).
+    var DUR=700, hdr=document.querySelector('header'), seq=0;
     function offset(){ return (hdr?hdr.getBoundingClientRect().height:64)+10; }
     function ease(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
     function go(el, hash){
+      var my=++seq;                      // 이전 루프들은 이 시점에 전부 무효화됨
       var start=window.pageYOffset;
       var end=Math.round(el.getBoundingClientRect().top+start-offset());
       var max=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
       end=Math.max(0,Math.min(end,max));
-      if(Math.abs(end-start)<2){ done(); return; }
-      var t0=null, guard=null; busy=true;
-      // 안전장치: rAF 가 안 돌면(탭 백그라운드·throttle 등) 애니메이션이 시작조차 안 되는데
-      // 이미 preventDefault 한 뒤라 링크가 죽어버린다. 시간 초과 시 즉시 이동으로 폴백.
-      guard=setTimeout(function(){ if(busy){ window.scrollTo({top:end,behavior:'instant'}); done(); } }, DUR+300);
-      function done(){
-        busy=false; if(guard){clearTimeout(guard); guard=null;}
-        window.removeEventListener('wheel',cancel); window.removeEventListener('touchstart',cancel);
+      var t0=null, guard=null;
+      function off(){ window.removeEventListener('wheel',cancel); window.removeEventListener('touchstart',cancel); }
+      function settle(){
+        if(my!==seq) return;             // 내가 이미 밀려났으면 아무것도 하지 않는다
+        if(guard){clearTimeout(guard); guard=null;}
+        off();
         if(hash){
           if(history.replaceState) history.replaceState(null,'',hash); else location.hash=hash;
           // 키보드/스크린리더용 포커스 이동 (아웃라인은 :focus-visible 만 뜨므로 시각적 변화 없음)
@@ -548,16 +549,24 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
           if(pt===null) el.addEventListener('blur',function h(){el.removeAttribute('tabindex');el.removeEventListener('blur',h);});
         }
       }
-      function cancel(){ busy=false; done(); }
+      // 사용자가 스크롤을 가져가면 양보 (해시는 갱신하지 않는다 — 도착하지 않았으므로)
+      function cancel(){ if(my!==seq) return; seq++; if(guard){clearTimeout(guard); guard=null;} off(); }
+      if(Math.abs(end-start)<2){ settle(); return; }
       window.addEventListener('wheel',cancel,{passive:true,once:true});
       window.addEventListener('touchstart',cancel,{passive:true,once:true});
+      // 안전장치: rAF 가 안 돌면(탭 백그라운드·throttle 등) 애니메이션이 시작조차 안 되는데
+      // 이미 preventDefault 한 뒤라 링크가 죽어버린다. 시간 초과 시 즉시 이동으로 폴백.
+      guard=setTimeout(function(){
+        if(my!==seq) return;
+        window.scrollTo({top:end,behavior:'instant'}); settle();
+      }, DUR+300);
       function step(ts){
-        if(!busy) return;
+        if(my!==seq) return;
         if(t0===null) t0=ts;
         var p=Math.min((ts-t0)/DUR,1);
         // behavior:'instant' 로 CSS scroll-behavior:smooth 와 충돌 방지
         window.scrollTo({top:start+(end-start)*ease(p),behavior:'instant'});
-        if(p<1) requestAnimationFrame(step); else done();
+        if(p<1) requestAnimationFrame(step); else settle();
       }
       requestAnimationFrame(step);
     }
