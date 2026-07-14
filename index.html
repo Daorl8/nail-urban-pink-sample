@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Nail.urban · 수원 프라이빗 네일 스튜디오</title>
+<meta name="description" content="수원 프라이빗 네일 스튜디오 네일어반. 손끝을 오롯이 맡기는 오마카세 네일. 1:1 맞춤 디자인 · 예약·문의 안내.">
+<meta property="og:title" content="Nail.urban · 수원 프라이빗 네일 스튜디오">
+<meta property="og:description" content="손끝을 오롯이 맡기는 오마카세 네일. 당신에게 가장 어울리는 결로 완성하는 수원 프라이빗 네일 스튜디오.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://nail-urban-sample.lgt3232.workers.dev/nu-hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Serif+KR:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preload" as="image" href="nu-hero.jpg" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F4EAF0'/%3E%3Cpath d='M32 14l2.6 7.4L42 24l-7.4 2.6L32 34l-2.6-7.4L22 24l7.4-2.6z' fill='%238E4E6E'/%3E%3Ccircle cx='45' cy='42' r='3' fill='%23C486A0'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --bg:#FBF7F9; --bg2:#F4EAF0; --taupe:#C3B2BC; --card:#FDFAFC;
+  --ink:#3E2F38; --ink-soft:#7C6B75; --ink-faint:#B8A7B1;
+  --gold:#C486A0; --gold-mark:#EBC7DA;
+  --cta:#8E4E6E; --cta-dk:#723E58;
+  --line:#EEDFE8; --line-soft:#F6EEF3;
+  --silver:#C9CDD6; --silver-lt:#E6E9EF;
+  --iri1:#F3C6DD; --iri2:#D9C7F0; --iri3:#C7D0F0; --iri4:#C7EFE0; --iri5:#F6D9C6;
+  --serif:'Playfair Display','Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
+  --myeong:'Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
+  --script:'Parisienne','Playfair Display','Apple SD Gothic Neo',serif;
+  --sans:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:light;-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:74px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.75;
+  word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden;
+  text-wrap:pretty;-webkit-font-smoothing:antialiased;letter-spacing:.01em;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 22px}
+.sec{padding:clamp(62px,10vw,104px) 0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 16px}
+.serif{font-family:var(--serif)}
+.krh{font-family:var(--myeong);font-weight:600;letter-spacing:-.005em}
+.mark{background:linear-gradient(180deg,transparent 58%,var(--gold-mark) 58%,var(--gold-mark) 92%,transparent 92%);
+  padding:0 .08em}
+.nb{white-space:nowrap}
+.mark-soft{background:linear-gradient(180deg,transparent 56%,rgba(235,180,214,.55) 56%,rgba(203,196,236,.5) 76%,rgba(197,235,222,.46) 92%,transparent 92%)}
+
+/* specnote */
+.specnote{background:var(--ink);color:#EBDCE5;font-size:12.5px;line-height:1.5;
+  text-align:center;padding:8px 18px;letter-spacing:.01em}
+.specnote b{color:#fff;font-weight:600}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
+  border-bottom:1px solid var(--line-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:9px;min-width:0}
+.logo svg{flex:0 0 auto}
+.logo .lt{font-family:var(--script);font-size:28px;font-weight:400;
+  letter-spacing:.01em;color:var(--ink);line-height:1;padding-bottom:3px}
+.menu{display:none;gap:30px;align-items:center}
+.menu a{font-size:14px;color:var(--ink-soft);letter-spacing:.02em}
+.nav-cta{display:inline-flex;align-items:center;padding:10px 18px;border-radius:999px;
+  background:var(--cta);color:#fff;font-size:13.5px;font-weight:600;letter-spacing:.02em}
+@media(min-width:860px){ .menu{display:flex} }
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 30px;border-radius:999px;font-size:15px;font-weight:600;
+  letter-spacing:.02em;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--cta);color:#fff;box-shadow:0 10px 26px rgba(142,78,110,.24)}
+.btn-ghost{background:rgba(255,255,255,.65);color:var(--ink);border-color:var(--line)}
+
+/* hero */
+.hero{position:relative;min-height:88vh;min-height:88svh;display:flex;align-items:center;
+  overflow:hidden;background:var(--bg2)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:52% 42%}
+.hero-scrim{position:absolute;inset:0;z-index:2;
+  background:linear-gradient(90deg,rgba(251,247,249,.93) 0%,rgba(251,247,249,.70) 42%,rgba(251,247,249,.18) 78%,rgba(251,247,249,0) 100%)}
+.hero .wrap{position:relative;z-index:5}
+.hero-inner{max-width:610px;padding:40px 0}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,7.6vw,80px);font-weight:500;
+  line-height:1.06;letter-spacing:.005em;margin:0 0 18px}
+.hero h1 .kr{font-family:var(--myeong);font-weight:600;letter-spacing:-.005em;
+  display:block;font-size:.42em;margin-top:16px;color:var(--ink)}
+.hero .lead{font-size:clamp(15px,2vw,17px);color:var(--ink-soft);max-width:470px;margin:0 0 34px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+/* hero aurora / sheen / glitter / holographic (히어로 몰입, 본문 절제) */
+.hero-aurora,.hero-sheen,.hero-glitter{position:absolute;pointer-events:none}
+.hero-aurora{inset:-25%;z-index:1;
+  background:linear-gradient(115deg,var(--iri1),var(--iri2),var(--iri3),var(--iri4),var(--iri5),var(--iri1));
+  background-size:300% 300%;mix-blend-mode:soft-light;opacity:.9;
+  animation:auroraShift 24s ease-in-out infinite}
+.hero-sheen{inset:0;z-index:1;mix-blend-mode:screen;opacity:.6;
+  background:radial-gradient(120% 85% at 80% 26%,rgba(255,255,255,.42),rgba(255,255,255,0) 58%)}
+.hero-glitter{inset:0;z-index:3;opacity:.9;
+  background-image:
+    radial-gradient(1.7px 1.7px at 22% 28%,#fff,transparent),
+    radial-gradient(1.4px 1.4px at 67% 20%,var(--silver-lt),transparent),
+    radial-gradient(1.3px 1.3px at 83% 52%,#fff,transparent),
+    radial-gradient(1.6px 1.6px at 45% 70%,var(--iri1),transparent),
+    radial-gradient(1.3px 1.3px at 90% 76%,#fff,transparent),
+    radial-gradient(1.2px 1.2px at 58% 40%,var(--silver-lt),transparent),
+    radial-gradient(1.5px 1.5px at 33% 86%,#fff,transparent),
+    radial-gradient(1.3px 1.3px at 75% 90%,var(--iri2),transparent),
+    radial-gradient(1.2px 1.2px at 12% 62%,#fff,transparent);
+  animation:twinkle 5s ease-in-out infinite}
+@keyframes auroraShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes twinkle{0%,100%{opacity:.4}50%{opacity:.95}}
+.hero h1.holo{
+  background:linear-gradient(100deg,#9A4E72 0%,#7E5FA6 26%,#3D8A82 50%,#A85A86 74%,#9A4E72 100%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:holoSweep 9s ease-in-out infinite}
+.hero h1.holo .kr{-webkit-text-fill-color:var(--ink);color:var(--ink);background:none}
+@keyframes holoSweep{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+
+/* about */
+.about-grid{display:grid;gap:clamp(34px,5vw,66px);align-items:center;grid-template-columns:1fr}
+@media(min-width:820px){ .about-grid{grid-template-columns:0.92fr 1.08fr} }
+.about-img{position:relative;border-radius:20px;overflow:hidden;min-width:0;
+  box-shadow:0 24px 60px rgba(142,78,110,.16)}
+.about-img img{width:100%;aspect-ratio:11/12;object-fit:cover}
+.about-txt{min-width:0}
+.about-txt h2{font-size:clamp(26px,3.8vw,38px);margin:0 0 20px}
+.about-txt h2 .en{font-family:var(--serif);font-weight:500;font-style:italic;color:var(--ink-soft);
+  display:block;font-size:.62em;margin-bottom:6px;letter-spacing:.02em}
+.about-txt p{color:var(--ink-soft);margin:0 0 26px}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.points li{display:flex;gap:14px;min-width:0}
+.points .pn{flex:0 0 auto;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold);
+  width:30px;line-height:1.5}
+.points .pt strong{display:block;font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.points .pt span{font-size:14px;color:var(--ink-soft)}
+
+/* section head */
+.shead{text-align:center;max-width:640px;margin:0 auto clamp(40px,6vw,60px)}
+.shead .en{font-family:var(--serif);font-style:italic;font-size:clamp(30px,5vw,46px);
+  color:var(--ink-faint);font-weight:500;display:block;margin-bottom:2px}
+.shead h2{font-size:clamp(24px,3.6vw,34px)}
+.shead p{color:var(--ink-soft);margin:14px auto 0;font-size:15px;max-width:520px;text-wrap:balance}
+
+/* menu cards */
+.menu-grid{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:560px){ .menu-grid{grid-template-columns:1fr 1fr} }
+@media(min-width:960px){ .menu-grid{grid-template-columns:repeat(4,1fr)} }
+.mcard{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;
+  padding:30px 24px 26px;display:flex;flex-direction:column;min-width:0;transition:.25s;position:relative}
+.mcard.sig{border-color:var(--gold);background:linear-gradient(180deg,#FBEEF5,#FDFAFC)}
+.mcard .mtag{position:absolute;top:16px;right:16px;font-size:10.5px;font-weight:700;letter-spacing:.08em;
+  color:var(--cta);background:var(--gold-mark);border-radius:999px;padding:3px 9px}
+.mcard .mnum{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-faint)}
+.mcard h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:12px 0 10px}
+.mcard .mdesc{font-size:14px;color:var(--ink-soft);flex:1;text-wrap:balance}
+.mcard .mprice{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft);
+  font-size:13px;color:var(--cta);font-weight:600;letter-spacing:.02em}
+
+/* gallery */
+.gal{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(min-width:720px){ .gal{grid-template-columns:repeat(3,1fr)} }
+.glink{position:relative;border-radius:14px;overflow:hidden;background:var(--bg2);
+  cursor:pointer;min-width:0;display:block}
+.glink img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:.5s}
+.glink::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(62,47,56,0) 60%,rgba(62,47,56,.20) 100%);opacity:0;transition:.3s}
+
+/* reserve */
+.reserve{background:var(--bg2)}
+.res-grid{display:grid;gap:clamp(30px,5vw,54px);grid-template-columns:1fr;align-items:center}
+@media(min-width:900px){ .res-grid{grid-template-columns:1fr 1fr} }
+.chan{display:grid;gap:12px}
+.chan a{display:flex;align-items:center;gap:15px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:17px 20px;min-width:0;transition:.22s}
+.chan .cico{flex:0 0 auto;width:42px;height:42px;border-radius:11px;display:flex;
+  align-items:center;justify-content:center;background:var(--bg)}
+.chan .cmeta{min-width:0}
+.chan .cmeta strong{display:block;font-size:15px;font-weight:700}
+.chan .cmeta span{font-size:13px;color:var(--ink-soft);overflow-wrap:anywhere}
+.chan .carrow{margin-left:auto;color:var(--ink-faint);flex:0 0 auto}
+
+/* form */
+.form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(24px,3.4vw,34px)}
+.form h3{font-size:19px;font-weight:800;margin:0 0 6px}
+.form .fsub{font-size:13.5px;color:var(--ink-soft);margin:0 0 22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:7px}
+.field input,.field textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);
+  background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:13px 15px;transition:.2s}
+.field textarea{min-height:96px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:#fff}
+.consent{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink-soft);margin:4px 0 18px}
+.consent input{margin-top:3px;accent-color:var(--cta);flex:0 0 auto}
+.form-warn{display:none;font-size:13px;color:#9A6B3C;background:#F6EBD9;border-radius:9px;
+  padding:9px 13px;margin-bottom:14px}
+.form-warn.show{display:block}
+.form .btn-primary{width:100%}
+.form-ok{display:none;text-align:center;padding:20px 0}
+.form-ok.show{display:block}
+.form-ok .ok-ico{width:54px;height:54px;margin:0 auto 12px;border-radius:50%;
+  background:var(--bg2);display:flex;align-items:center;justify-content:center}
+.form-ok h3{margin-bottom:6px}
+
+/* location */
+.loc-grid{display:grid;gap:26px;grid-template-columns:1fr}
+@media(min-width:820px){ .loc-grid{grid-template-columns:1fr 1fr} }
+.loc-info{min-width:0}
+.loc-row{display:flex;gap:13px;padding:15px 0;border-bottom:1px solid var(--line-soft);min-width:0}
+.loc-row:last-child{border-bottom:0}
+.loc-row .lk{flex:0 0 96px;font-size:13px;font-weight:700;color:var(--cta);letter-spacing:.02em}
+.loc-row .lv{font-size:14.5px;color:var(--ink-soft);min-width:0}
+
+/* footer */
+footer{background:var(--ink);color:#D8CCBA;padding:52px 0 40px}
+footer .fwrap{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
+footer .flogo{font-family:var(--script);font-size:36px;color:#fff;line-height:1}
+footer .ftag{font-size:13.5px;color:#A99C88;margin-top:8px;max-width:300px}
+footer .fchan{display:flex;gap:12px;margin-top:4px}
+footer .fchan a{width:40px;height:40px;border-radius:50%;border:1px solid #5F5443;
+  display:flex;align-items:center;justify-content:center;transition:.22s}
+footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-top:20px;
+  font-size:12px;color:#938672;line-height:1.7}
+
+/* quickbar (mobile) */
+.quickbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:var(--card);border-top:1px solid var(--line);
+  box-shadow:0 -6px 22px rgba(142,78,110,.12);padding-bottom:env(safe-area-inset-bottom)}
+.quickbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:9px 4px 8px;font-size:11px;color:var(--ink-soft)}
+.quickbar a.qmain{background:var(--cta);color:#fff;font-weight:600}
+.quickbar a svg{width:20px;height:20px}
+@media(max-width:767px){
+  .quickbar{display:flex} body{padding-bottom:60px}
+  .hero-scrim{background:linear-gradient(180deg,rgba(251,247,249,.86) 0%,rgba(251,247,249,.72) 58%,rgba(251,247,249,.60) 100%)}
+  .hero .lead{color:var(--ink);font-weight:600}
+  .hero-cta{justify-content:center}
+}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:120;background:rgba(42,32,40,.86);
+  display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:84vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.lb-x{position:absolute;top:20px;right:22px;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.14);color:#fff;border:0;font-size:22px;cursor:pointer}
+
+/* reveal — desktop only (mobile always visible; §11) */
+.rv{opacity:1;transform:none}
+@media(min-width:768px) and (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .js .rv.in{opacity:1;transform:none}
+}
+
+/* touch: kill sticky hover lift */
+@media(hover:none){
+  .mcard:hover,.chan a:hover,.glink:hover img{transform:none}
+}
+@media(hover:hover){
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(142,78,110,.30)}
+  .btn-ghost:hover{border-color:var(--cta);color:var(--cta)}
+  .nav-cta:hover{background:var(--cta-dk)}
+  .menu a:hover{color:var(--ink)}
+  .mcard:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(142,78,110,.15)}
+  .chan a:hover{border-color:var(--gold);transform:translateX(3px)}
+  .glink:hover img{transform:scale(1.05)}
+  .glink:hover::after{opacity:1}
+  footer .fchan a:hover{border-color:var(--gold);color:#fff}
+}
+
+/* location map */
+.loc-map{border-radius:16px;overflow:hidden;border:1px solid var(--line-soft);background:var(--bg2);min-width:0}
+.loc-map iframe{width:100%;height:300px;border:0;display:block;filter:grayscale(.12)}
+.map-btn{display:block;text-align:center;padding:14px;background:var(--card);color:var(--cta);font-weight:600;font-size:14px;border-top:1px solid var(--line-soft);transition:.2s}
+/* price list */
+.pricelist{margin-top:24px;background:var(--card);border:1px solid var(--line-soft);border-radius:18px;padding:clamp(22px,3.2vw,32px)}
+.pl-title{font-size:18px;font-weight:800;margin:0 0 14px}
+.pl{list-style:none;margin:0;padding:0}
+.pl li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-soft);min-width:0}
+.pl li:last-child{border-bottom:0}
+.pl li>span{font-size:15px;color:var(--ink);min-width:0}
+.pl li>span em{font-style:normal;color:var(--ink-faint);font-size:12.5px;margin-left:5px}
+.pl li>b{font-weight:700;font-size:15px;color:var(--cta);display:flex;flex-direction:column;align-items:flex-end;text-align:right;flex:0 0 auto}
+.pl li>b small{font-weight:500;font-size:12px;color:var(--ink-soft)}
+.pl-note{font-size:12.5px;color:var(--ink-soft);margin:16px 0 0;line-height:1.65}
+/* reserve note */
+.res-note{margin-top:clamp(28px,4vw,40px);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.res-note strong{display:block;font-size:13px;font-weight:800;color:var(--cta);margin-bottom:10px;letter-spacing:.03em}
+.res-note ul{margin:0;padding-left:18px}
+.res-note li{font-size:13.5px;color:var(--ink-soft);margin-bottom:6px}
+.res-note li b{color:var(--ink);font-weight:700}
+@media(hover:hover){ .map-btn:hover{background:var(--bg2)} }
+</style>
+</head>
+<body>
+
+<div class="specnote">✦ 예시용 <b>무료 시안</b>입니다 · 가격·영업시간·주소·예약 링크는 <b>원장님 확인 후</b> 실제 정보로 반영됩니다</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Nail.urban 홈">
+      <span class="lt">Nail.urban</span>
+    </a>
+    <nav class="menu" aria-label="주요 메뉴">
+      <a href="#about">소개</a>
+      <a href="#menu">시술</a>
+      <a href="#gallery">갤러리</a>
+      <a href="#location">오시는 길</a>
+    </nav>
+    <a class="nav-cta" href="#reserve">예약 문의</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"><img src="nu-hero.jpg" alt="네일어반의 레이스·펄 무드 젤네일 작업물" width="1400" height="1646"></div>
+    <div class="hero-aurora" aria-hidden="true"></div>
+    <div class="hero-sheen" aria-hidden="true"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-glitter" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <h1 class="holo">Nail<br>Urban<span class="kr">손끝을 <span class="mark mark-soft">오롯이 맡기는</span> 시간</span></h1>
+        <p class="lead">원장님께 톤과 무드를 맡기면, 당신에게 가장 어울리는 결로 완성해 드려요. 수원 프라이빗 네일 스튜디오, 네일어반입니다.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#reserve">예약 문의하기</a>
+          <a class="btn btn-ghost" href="#gallery">작품 둘러보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="wrap about-grid">
+      <div class="about-img rv"><img src="nu-about.jpg" alt="네일어반의 시그니처 젤네일 클로즈업" loading="lazy"></div>
+      <div class="about-txt rv">
+        <h2><span class="en serif">About us</span><span class="krh">결이 고운 손끝을 위한 프라이빗 스튜디오</span></h2>
+        <p>네일어반은 한 분 한 분께 온전히 집중하는 1:1 프라이빗 예약제로 운영됩니다. 원하시는 무드를 맡겨주시면, 손 모양과 톤·일상에 어울리는 <span class="mark nb">오마카세 네일</span>로 섬세하게 완성해 드려요.</p>
+        <ul class="points">
+          <li><span class="pn">01</span><span class="pt"><strong>1:1 프라이빗 예약제</strong><span>오롯이 당신에게 집중하는 편안한 시간</span></span></li>
+          <li><span class="pn">02</span><span class="pt"><strong>지속력 있는 마감</strong><span>꼼꼼한 케어와 탄탄한 마감으로 오래 예쁘게</span></span></li>
+          <li><span class="pn">03</span><span class="pt"><strong>맞춤 디자인 제안</strong><span>손 모양·톤·취향을 반영한 1:1 디자인 컨설팅</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="sec" id="menu" style="background:var(--bg2)">
+    <div class="wrap">
+      <div class="shead rv">
+        <span class="en serif">Menu</span>
+        <h2 class="krh">시술 안내</h2>
+        <p>가격은 아트 난이도와 길이에 따라 달라져요. 정확한 견적은 편하게 문의해 주세요.</p>
+      </div>
+      <div class="menu-grid">
+        <a class="mcard sig rv" href="#reserve" aria-label="오마카세 네일 예약 문의"><span class="mtag">SIGNATURE</span><span class="mnum">01</span><h3>오마카세 네일</h3><p class="mdesc">원장님께 맡기는 맞춤 디자인 당신의 무드에 꼭 맞는 결로 완성</p><div class="mprice">예약 문의 →</div></a>
+        <a class="mcard rv" href="#reserve" aria-label="젤 네일 예약 문의"><span class="mnum">02</span><h3>젤 네일</h3><p class="mdesc">원컬러 · 프렌치 · 그라데이션 깔끔한 데일리 무드</p><div class="mprice">예약 문의 →</div></a>
+        <a class="mcard rv" href="#reserve" aria-label="아트 · 주얼 예약 문의"><span class="mnum">03</span><h3>아트 · 주얼</h3><p class="mdesc">레이스 · 플라워 · 큐빅 주얼 은은하게 반짝이는 포인트 아트</p><div class="mprice">예약 문의 →</div></a>
+        <a class="mcard rv" href="#reserve" aria-label="케어 · 연장 예약 문의"><span class="mnum">04</span><h3>케어 · 연장</h3><p class="mdesc">습식 케어 · 연장 · 보수 건강한 손톱 결을 위한 관리</p><div class="mprice">예약 문의 →</div></a>
+      </div>
+      <div class="pricelist rv">
+        <h3 class="pl-title">가격 안내</h3>
+        <ul class="pl">
+          <li><span>원컬러 <em>기본·시럽·컬러</em></span><b>35,000원<small>자석 50,000원</small></b></li>
+          <li><span>프렌치</span><b>45,000원</b></li>
+          <li><span>그라데이션</span><b>40,000원</b></li>
+          <li><span>랩핑</span><b>5,000원</b></li>
+          <li><span>개당 연장</span><b>6,000원<small>아크릴젤 9,000 · 젤연장 8,000</small></b></li>
+          <li><span>전체 연장</span><b>60,000원<small>아크릴젤 90,000 · 젤연장 80,000</small></b></li>
+          <li><span>젤 제거</span><b>자샵 5,000원<small>타샵 10,000원</small></b></li>
+          <li><span>글리터·자석 추가</span><b>5,000~10,000원</b></li>
+          <li><span>아트</span><b>문의</b></li>
+        </ul>
+        <p class="pl-note">현금가 할인 기준이며, 기존 가격은 10%가 추가됩니다. 젤제거는 제거 후 아트 시에만 가능합니다. 타샵 젤제거만 단독으로는 받지 않아요. 자세한 아트 가격은 문의해 주세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="sec" id="gallery">
+    <div class="wrap">
+      <div class="shead rv">
+        <span class="en serif">Gallery</span>
+        <h2 class="krh">작품 갤러리</h2>
+        <p>네일어반의 실제 작업물이에요. 이미지를 누르면 크게 볼 수 있어요.</p>
+      </div>
+      <div class="gal rv">
+        <a class="glink" href="nu-g1.jpg"><img src="nu-g1.jpg" alt="레이스 프렌치 주얼 네일" loading="lazy"></a>
+        <a class="glink" href="nu-g2.jpg"><img src="nu-g2.jpg" alt="브라이덜 로즈 레이스 네일" loading="lazy"></a>
+        <a class="glink" href="nu-g3.jpg"><img src="nu-g3.jpg" alt="펄 도트 여리여리 네일" loading="lazy"></a>
+        <a class="glink" href="nu-g4.jpg"><img src="nu-g4.jpg" alt="시즌 디자인 아트 보드" loading="lazy"></a>
+        <a class="glink" href="nu-g5.jpg"><img src="nu-g5.jpg" alt="오로라 글로우 주얼 네일" loading="lazy"></a>
+        <a class="glink" href="nu-g6.jpg"><img src="nu-g6.jpg" alt="오로라 버터플라이 네일" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE -->
+  <section class="sec reserve" id="reserve">
+    <div class="wrap">
+      <div class="shead rv">
+        <span class="en serif">Reservation</span>
+        <h2 class="krh">예약 · 문의</h2>
+        <p>예약은 아래 채널로 편하게 남겨주세요. 원하시는 날짜·디자인을 알려주시면 안내해 드려요.</p>
+      </div>
+      <div class="res-grid">
+        <div class="chan rv">
+          <a href="https://pf.kakao.com/_SmIwG" target="_blank" rel="noopener" aria-label="카카오톡 채널 nail.urban">
+            <span class="cico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#FEE500"/><path d="M12 6.4c-3.2 0-5.8 2-5.8 4.5 0 1.6 1.1 3 2.7 3.8l-.6 2.3 2.6-1.5c.4.05.7.07 1.1.07 3.2 0 5.8-2 5.8-4.6S15.2 6.4 12 6.4z" fill="#3B1E1E"/></svg></span>
+            <span class="cmeta"><strong>카카오톡 채널</strong><span>디자인 상담 · 예약 문의</span></span>
+            <span class="carrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/nail.urban_/" target="_blank" rel="noopener" aria-label="인스타그램 nail.urban">
+            <span class="cico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#8E4E6E" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="#8E4E6E" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="#8E4E6E"/></svg></span>
+            <span class="cmeta"><strong>인스타그램 DM</strong><span>@nail.urban_</span></span>
+            <span class="carrow">→</span>
+          </a>
+        </div>
+
+        <form class="form" id="reserveForm" novalidate>
+          <div id="formBody">
+            <h3>간편 예약 문의</h3>
+            <p class="fsub">아래 내용을 남겨주시면 확인 후 연락드려요.</p>
+            <div id="formWarn" class="form-warn"></div>
+            <div class="field"><label for="fname">성함</label><input id="fname" type="text" placeholder="예약자 성함" autocomplete="name"></div>
+            <div class="field"><label for="fcontact">연락처</label><input id="fcontact" type="text" placeholder="연락 가능한 번호 또는 인스타 아이디" autocomplete="off"></div>
+            <div class="field"><label for="fmsg">원하는 디자인 · 날짜</label><textarea id="fmsg" placeholder="예) 날짜·시간 / 젤제거·연장 유무 / 원하는 시술·느낌 (오마카세 가능!)"></textarea></div>
+            <label class="consent"><input id="fagree" type="checkbox"><span>예약 문의 응대를 위한 개인정보 수집·이용에 동의합니다.</span></label>
+            <button type="submit" class="btn btn-primary">문의 보내기</button>
+          </div>
+          <div class="form-ok" id="formOk">
+            <div class="ok-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.2 4.2L19 7" stroke="#8E4E6E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 class="serif" style="font-style:italic">Thank you</h3>
+            <p class="fsub">문의가 접수되었어요. 확인 후 빠르게 연락드릴게요 ✦</p>
+          </div>
+        </form>
+      </div>
+      <div class="res-note rv">
+        <strong>예약 안내</strong>
+        <ul>
+          <li>예약 변경·취소는 최소 <b>4일 전</b>까지 가능해요 (예약금 환불 불가)</li>
+          <li>10분 이상 지각 시 아트에 제한이 있을 수 있어요</li>
+          <li>20분 이상 지각 시 노쇼 처리되며, 예약금은 환불되지 않아요</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="sec" id="location">
+    <div class="wrap">
+      <div class="shead rv">
+        <span class="en serif">Location</span>
+        <h2 class="krh">오시는 길</h2>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-info rv">
+          <div class="loc-row"><span class="lk">주소</span><span class="lv">경기 수원시 팔달구 효원로 278<br>파비오더시타 278호</span></div>
+          <div class="loc-row"><span class="lk">찾아오기</span><span class="lv">뷰티라운지 앞 · 에스컬레이터 바로 앞</span></div>
+          <div class="loc-row"><span class="lk">예약</span><span class="lv">1:1 프라이빗 예약제 · 방문 전 예약 필수</span></div>
+          <div class="loc-row"><span class="lk">영업시간</span><span class="lv">확정 후 안내 <em style="color:var(--ink-faint);font-style:normal">(원장님 확인 후 기입)</em></span></div>
+          <div class="loc-row"><span class="lk">주차</span><span class="lv">건물 지하 3층부터 주차 가능</span></div>
+        </div>
+        <div class="loc-map rv">
+          <iframe title="네일어반 위치 지도" src="https://www.google.com/maps/embed?pb=!1m4!3m2!1m1!2zMzfCsDE2JzAxLjgiTiAxMjfCsDAxJzEwLjYiRQ!5e0!3m2!1sko!2skr!4v1784004281669!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=37.2671744%2C127.0196053" target="_blank" rel="noopener">구글맵으로 길찾기 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap fwrap">
+    <div>
+      <div class="flogo">Nail.urban</div>
+      <p class="ftag">수원 프라이빗 네일 스튜디오 · 손끝을 오롯이 맡기는 오마카세 네일</p>
+    </div>
+    <div class="fchan">
+      <a href="https://www.instagram.com/nail.urban_/" target="_blank" rel="noopener" aria-label="인스타그램">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#D8CCBA" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="#D8CCBA" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="#D8CCBA"/></svg>
+      </a>
+      <a href="https://pf.kakao.com/_SmIwG" target="_blank" rel="noopener" aria-label="카카오톡 채널">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5.5c-3.6 0-6.5 2.3-6.5 5.1 0 1.8 1.2 3.4 3 4.3l-.7 2.6 2.9-1.7c.4.05.9.08 1.3.08 3.6 0 6.5-2.3 6.5-5.3S15.6 5.5 12 5.5z" stroke="#D8CCBA" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="fcopy">© 2026 Nail.urban. All rights reserved.<br>본 페이지는 이피웹(YIPI WEB)이 제작한 예시용 무료 시안이며, 실제 정보는 원장님 확인 후 반영됩니다.</div>
+  </div>
+</footer>
+
+<!-- QUICKBAR (mobile) -->
+<div class="q
