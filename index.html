@@ -15,17 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Serif+KR:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preload" as="image" href="nu-hero.jpg" fetchpriority="high">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F4EAF0'/%3E%3Cpath d='M32 14l2.6 7.4L42 24l-7.4 2.6L32 34l-2.6-7.4L22 24l7.4-2.6z' fill='%238E4E6E'/%3E%3Ccircle cx='45' cy='42' r='3' fill='%23C486A0'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F4EAF0'/%3E%3Cpath d='M32 14l2.6 7.4L42 24l-7.4 2.6L32 34l-2.6-7.4L22 24l7.4-2.6z' fill='%23E87BAA'/%3E%3Ccircle cx='45' cy='42' r='3' fill='%23C486A0'/%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js');</script>
 <style>
 :root{
-  --bg:#FBF7F9; --bg2:#F4EAF0; --taupe:#C3B2BC; --card:#FDFAFC;
-  --ink:#3E2F38; --ink-soft:#7C6B75; --ink-faint:#B8A7B1;
-  --gold:#AD7793; --gold-mark:#E0BBD0;
-  --cta:#8E4E6E; --cta-dk:#723E58;
-  --line:#EEDFE8; --line-soft:#F6EEF3;
+  --bg:#17131A; --bg2:#211B26; --taupe:#6E6070; --card:#221C28;
+  --ink:#F4ECF2; --ink-soft:#BCA9B8; --ink-faint:#8A7A88;
+  --gold:#E87BAA; --gold-mark:#E87BAA;
+  --cta:#C6427F; --cta-dk:#A83369;
+  --line:#332A38; --line-soft:#2A222E;
   --silver:#C9CDD6; --silver-lt:#E6E9EF;
-  --iri1:#B98CA8; --iri2:#8C86AE; --iri3:#7E93A6; --iri4:#6F938C; --iri5:#A98BA0;
+  --iri1:#F0B6D0; --iri2:#C7C1E6; --iri3:#AEC4E0; --iri4:#A6DAC9; --iri5:#EBB0C8;
   --serif:'Playfair Display','Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --myeong:'Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --script:'Parisienne','Playfair Display','Apple SD Gothic Neo',serif;
@@ -51,15 +51,15 @@ h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
 .mark{background:linear-gradient(180deg,transparent 58%,var(--gold-mark) 58%,var(--gold-mark) 92%,transparent 92%);
   padding:0 .08em}
 .nb{white-space:nowrap}
-.mark-soft{background:linear-gradient(180deg,transparent 56%,rgba(185,140,168,.5) 56%,rgba(140,134,174,.44) 76%,rgba(126,147,166,.4) 92%,transparent 92%)}
+.mark-soft{background:linear-gradient(180deg,transparent 56%,rgba(232,123,170,.42) 56%,rgba(206,193,236,.34) 76%,rgba(166,218,201,.3) 92%,transparent 92%)}
 
 /* specnote */
-.specnote{background:var(--ink);color:#EBDCE5;font-size:12.5px;line-height:1.5;
+.specnote{background:#0F0C12;color:#EBDCE5;font-size:12.5px;line-height:1.5;
   text-align:center;padding:8px 18px;letter-spacing:.01em}
 .specnote b{color:#fff;font-weight:600}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
+header{position:sticky;top:0;z-index:50;background:rgba(23,19,26,.96);
   border-bottom:1px solid var(--line-soft)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:9px;min-width:0}
@@ -77,7 +77,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
   padding:15px 30px;border-radius:999px;font-size:15px;font-weight:600;
   letter-spacing:.02em;cursor:pointer;border:1px solid transparent;transition:.25s}
 .btn-primary{background:var(--cta);color:#fff;box-shadow:0 10px 26px rgba(142,78,110,.24)}
-.btn-ghost{background:rgba(255,255,255,.65);color:var(--ink);border-color:var(--line)}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border-color:rgba(255,255,255,.24)}
 
 /* hero */
 .hero{position:relative;min-height:88vh;min-height:88svh;display:flex;align-items:center;
@@ -85,7 +85,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:52% 42%}
 .hero-scrim{position:absolute;inset:0;z-index:2;
-  background:linear-gradient(90deg,rgba(251,247,249,.93) 0%,rgba(251,247,249,.70) 42%,rgba(251,247,249,.18) 78%,rgba(251,247,249,0) 100%)}
+  background:linear-gradient(90deg,rgba(23,19,26,.93) 0%,rgba(23,19,26,.70) 42%,rgba(23,19,26,.18) 78%,rgba(23,19,26,0) 100%)}
 .hero .wrap{position:relative;z-index:5}
 .hero-inner{max-width:610px;padding:40px 0}
 .hero h1{font-family:var(--serif);font-size:clamp(44px,7.6vw,80px);font-weight:500;
@@ -100,7 +100,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
   background:linear-gradient(115deg,var(--iri1),var(--iri2),var(--iri3),var(--iri4),var(--iri5),var(--iri1));
   background-size:300% 300%;mix-blend-mode:overlay;opacity:.82;filter:saturate(1.15) contrast(1.04);
   animation:auroraShift 24s ease-in-out infinite}
-.hero-mood{inset:0;z-index:1;background:linear-gradient(180deg,rgba(48,36,44,0) 42%,rgba(48,36,44,.36) 100%),radial-gradient(130% 100% at 50% -8%,rgba(150,110,135,.12),transparent 55%)}
+.hero-mood{inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,16,23,.52) 0%,rgba(20,16,23,.32) 45%,rgba(20,16,23,.74) 100%)}
 .hero-sheen{inset:0;z-index:1;mix-blend-mode:screen;opacity:.6;
   background:radial-gradient(120% 85% at 80% 26%,rgba(255,255,255,.42),rgba(255,255,255,0) 58%)}
 .hero-glitter{inset:0;z-index:3;opacity:.9;
@@ -118,7 +118,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
 @keyframes auroraShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 @keyframes twinkle{0%,100%{opacity:.4}50%{opacity:.95}}
 .hero h1.holo{
-  background:linear-gradient(100deg,#6E4A66 0%,#6E5E8E 24%,#3D7E7A 50%,#8A5676 74%,#6E4A66 100%);
+  background:linear-gradient(100deg,#F3B9D2 0%,#CFC9EC 26%,#A9DAD0 50%,#EEA9C8 74%,#F3B9D2 100%);
   background-size:220% 100%;-webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
   animation:holoSweep 9s ease-in-out infinite}
@@ -156,7 +156,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
 @media(min-width:960px){ .menu-grid{grid-template-columns:repeat(4,1fr)} }
 .mcard{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;
   padding:30px 24px 26px;display:flex;flex-direction:column;min-width:0;transition:.25s;position:relative}
-.mcard.sig{border-color:var(--gold);background:linear-gradient(180deg,#FBEEF5,#FDFAFC)}
+.mcard.sig{border-color:var(--gold);background:linear-gradient(180deg,#2A2130,#221C28)}
 .mcard .mtag{position:absolute;top:16px;right:16px;font-size:10.5px;font-weight:700;letter-spacing:.08em;
   color:var(--cta);background:var(--gold-mark);border-radius:999px;padding:3px 9px}
 .mcard .mnum{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-faint)}
@@ -197,7 +197,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
 .field input,.field textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);
   background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:13px 15px;transition:.2s}
 .field textarea{min-height:96px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:#fff}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:#2A2230}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-faint)}
 .consent{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink-soft);margin:4px 0 18px}
 .consent input{margin-top:3px;accent-color:var(--cta);flex:0 0 auto}
 .form-warn{display:none;font-size:13px;color:#9A6B3C;background:#F6EBD9;border-radius:9px;
@@ -220,7 +221,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,247,249,.96);
 .loc-row .lv{font-size:14.5px;color:var(--ink-soft);min-width:0}
 
 /* footer */
-footer{background:var(--ink);color:#D8CCBA;padding:52px 0 40px}
+footer{background:#0F0C12;color:#D8CCBA;padding:52px 0 40px}
 footer .fwrap{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
 footer .flogo{font-family:var(--script);font-size:36px;color:#fff;line-height:1}
 footer .ftag{font-size:13.5px;color:#A99C88;margin-top:8px;max-width:300px}
@@ -240,7 +241,7 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
 .quickbar a svg{width:20px;height:20px}
 @media(max-width:767px){
   .quickbar{display:flex} body{padding-bottom:60px}
-  .hero-scrim{background:linear-gradient(180deg,rgba(251,247,249,.86) 0%,rgba(251,247,249,.72) 58%,rgba(251,247,249,.60) 100%)}
+  .hero-scrim{background:linear-gradient(180deg,rgba(23,19,26,.86) 0%,rgba(23,19,26,.72) 58%,rgba(23,19,26,.60) 100%)}
   .hero .lead{color:var(--ink);font-weight:600}
   .hero-cta{justify-content:center}
 }
@@ -424,7 +425,7 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
             <span class="carrow">→</span>
           </a>
           <a href="https://www.instagram.com/nail.urban_/" target="_blank" rel="noopener" aria-label="인스타그램 nail.urban">
-            <span class="cico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#8E4E6E" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="#8E4E6E" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="#8E4E6E"/></svg></span>
+            <span class="cico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#E87BAA" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="#E87BAA" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="#E87BAA"/></svg></span>
             <span class="cmeta"><strong>인스타그램 DM</strong><span>@nail.urban_</span></span>
             <span class="carrow">→</span>
           </a>
@@ -442,7 +443,7 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
             <button type="submit" class="btn btn-primary">문의 보내기</button>
           </div>
           <div class="form-ok" id="formOk">
-            <div class="ok-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.2 4.2L19 7" stroke="#8E4E6E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="ok-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.2 4.2L19 7" stroke="#E87BAA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <h3 class="serif" style="font-style:italic">Thank you</h3>
             <p class="fsub">문의가 접수되었어요. 확인 후 빠르게 연락드릴게요 ✦</p>
           </div>
