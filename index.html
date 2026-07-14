@@ -15,17 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Serif+KR:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preload" as="image" href="nu-hero.jpg" fetchpriority="high">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F4EAF0'/%3E%3Cpath d='M32 14l2.6 7.4L42 24l-7.4 2.6L32 34l-2.6-7.4L22 24l7.4-2.6z' fill='%23E87BAA'/%3E%3Ccircle cx='45' cy='42' r='3' fill='%23C486A0'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23EEEDF1'/%3E%3Cpath d='M32 14l2.6 7.4L42 24l-7.4 2.6L32 34l-2.6-7.4L22 24l7.4-2.6z' fill='%23C1467A'/%3E%3Ccircle cx='45' cy='42' r='3' fill='%23DB5E88'/%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js');</script>
 <style>
 :root{
-  --bg:#17131A; --bg2:#211B26; --taupe:#6E6070; --card:#221C28;
-  --ink:#F4ECF2; --ink-soft:#BCA9B8; --ink-faint:#8A7A88;
-  --gold:#E87BAA; --gold-mark:#E87BAA;
-  --cta:#C6427F; --cta-dk:#A83369;
-  --line:#332A38; --line-soft:#2A222E;
-  --silver:#C9CDD6; --silver-lt:#E6E9EF;
-  --iri1:#F0B6D0; --iri2:#C7C1E6; --iri3:#AEC4E0; --iri4:#A6DAC9; --iri5:#EBB0C8;
+  --bg:#F8F8FA; --bg2:#EEEDF1; --taupe:#ABA9B2; --card:#FFFFFF;
+  --ink:#2F2E33; --ink-soft:#78757E; --ink-faint:#B0AEB6;
+  --gold:#DB5E88; --gold-mark:#F5C6D7;
+  --cta:#C1467A; --cta-dk:#A73A67;
+  --line:#E6E4EA; --line-soft:#F1EFF4;
   --serif:'Playfair Display','Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --myeong:'Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --script:'Parisienne','Playfair Display','Apple SD Gothic Neo',serif;
@@ -51,15 +49,15 @@ h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
 .mark{background:linear-gradient(180deg,transparent 58%,var(--gold-mark) 58%,var(--gold-mark) 92%,transparent 92%);
   padding:0 .08em}
 .nb{white-space:nowrap}
-.mark-soft{background:linear-gradient(180deg,transparent 56%,rgba(232,123,170,.42) 56%,rgba(206,193,236,.34) 76%,rgba(166,218,201,.3) 92%,transparent 92%)}
+.mark-soft{background:linear-gradient(180deg,transparent 58%,rgba(232,150,185,.40) 58%,rgba(232,150,185,.40) 90%,transparent 90%)}
 
 /* specnote */
-.specnote{background:#0F0C12;color:#EBDCE5;font-size:12.5px;line-height:1.5;
+.specnote{background:var(--ink);color:#EDE6E1;font-size:12.5px;line-height:1.5;
   text-align:center;padding:8px 18px;letter-spacing:.01em}
 .specnote b{color:#fff;font-weight:600}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(23,19,26,.96);
+header{position:sticky;top:0;z-index:50;background:rgba(248,248,250,.96);
   border-bottom:1px solid var(--line-soft)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:9px;min-width:0}
@@ -76,17 +74,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(23,19,26,.96);
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:15px 30px;border-radius:999px;font-size:15px;font-weight:600;
   letter-spacing:.02em;cursor:pointer;border:1px solid transparent;transition:.25s}
-.btn-primary{background:var(--cta);color:#fff;box-shadow:0 10px 26px rgba(142,78,110,.24)}
-.btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border-color:rgba(255,255,255,.24)}
+.btn-primary{background:var(--cta);color:#fff;box-shadow:0 10px 26px rgba(193,70,122,.24)}
+.btn-ghost{background:rgba(255,255,255,.65);color:var(--ink);border-color:var(--line)}
 
 /* hero */
 .hero{position:relative;min-height:88vh;min-height:88svh;display:flex;align-items:center;
   overflow:hidden;background:var(--bg2)}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:52% 42%}
-.hero-scrim{position:absolute;inset:0;z-index:2;
-  background:linear-gradient(90deg,rgba(23,19,26,.93) 0%,rgba(23,19,26,.70) 42%,rgba(23,19,26,.18) 78%,rgba(23,19,26,0) 100%)}
-.hero .wrap{position:relative;z-index:5}
+.hero-scrim{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(248,248,250,.93) 0%,rgba(248,248,250,.70) 42%,rgba(248,248,250,.18) 78%,rgba(248,248,250,0) 100%)}
+.hero .wrap{position:relative;z-index:2}
 .hero-inner{max-width:610px;padding:40px 0}
 .hero h1{font-family:var(--serif);font-size:clamp(44px,7.6vw,80px);font-weight:500;
   line-height:1.06;letter-spacing:.005em;margin:0 0 18px}
@@ -94,42 +92,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(23,19,26,.96);
   display:block;font-size:.42em;margin-top:16px;color:var(--ink)}
 .hero .lead{font-size:clamp(15px,2vw,17px);color:var(--ink-soft);max-width:470px;margin:0 0 34px}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-/* hero aurora / sheen / glitter / holographic (히어로 몰입, 본문 절제) */
-.hero-aurora,.hero-sheen,.hero-glitter,.hero-mood{position:absolute;pointer-events:none}
-.hero-aurora{inset:-25%;z-index:1;
-  background:linear-gradient(115deg,var(--iri1),var(--iri2),var(--iri3),var(--iri4),var(--iri5),var(--iri1));
-  background-size:300% 300%;mix-blend-mode:overlay;opacity:.82;filter:saturate(1.15) contrast(1.04);
-  animation:auroraShift 24s ease-in-out infinite}
-.hero-mood{inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,16,23,.52) 0%,rgba(20,16,23,.32) 45%,rgba(20,16,23,.74) 100%)}
-.hero-sheen{inset:0;z-index:1;mix-blend-mode:screen;opacity:.6;
-  background:radial-gradient(120% 85% at 80% 26%,rgba(255,255,255,.42),rgba(255,255,255,0) 58%)}
-.hero-glitter{inset:0;z-index:3;opacity:.9;
-  background-image:
-    radial-gradient(1.7px 1.7px at 22% 28%,#fff,transparent),
-    radial-gradient(1.4px 1.4px at 67% 20%,var(--silver-lt),transparent),
-    radial-gradient(1.3px 1.3px at 83% 52%,#fff,transparent),
-    radial-gradient(1.6px 1.6px at 45% 70%,var(--iri1),transparent),
-    radial-gradient(1.3px 1.3px at 90% 76%,#fff,transparent),
-    radial-gradient(1.2px 1.2px at 58% 40%,var(--silver-lt),transparent),
-    radial-gradient(1.5px 1.5px at 33% 86%,#fff,transparent),
-    radial-gradient(1.3px 1.3px at 75% 90%,var(--iri2),transparent),
-    radial-gradient(1.2px 1.2px at 12% 62%,#fff,transparent);
-  animation:twinkle 5s ease-in-out infinite}
-@keyframes auroraShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@keyframes twinkle{0%,100%{opacity:.4}50%{opacity:.95}}
-.hero h1.holo{
-  background:linear-gradient(100deg,#F3B9D2 0%,#CFC9EC 26%,#A9DAD0 50%,#EEA9C8 74%,#F3B9D2 100%);
-  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-  animation:holoSweep 9s ease-in-out infinite}
-.hero h1.holo .kr{-webkit-text-fill-color:var(--ink);color:var(--ink);background:none}
-@keyframes holoSweep{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
 
 /* about */
 .about-grid{display:grid;gap:clamp(34px,5vw,66px);align-items:center;grid-template-columns:1fr}
 @media(min-width:820px){ .about-grid{grid-template-columns:0.92fr 1.08fr} }
 .about-img{position:relative;border-radius:20px;overflow:hidden;min-width:0;
-  box-shadow:0 24px 60px rgba(142,78,110,.16)}
+  box-shadow:0 24px 60px rgba(193,70,122,.16)}
 .about-img img{width:100%;aspect-ratio:11/12;object-fit:cover}
 .about-txt{min-width:0}
 .about-txt h2{font-size:clamp(26px,3.8vw,38px);margin:0 0 20px}
@@ -156,7 +124,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(23,19,26,.96);
 @media(min-width:960px){ .menu-grid{grid-template-columns:repeat(4,1fr)} }
 .mcard{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;
   padding:30px 24px 26px;display:flex;flex-direction:column;min-width:0;transition:.25s;position:relative}
-.mcard.sig{border-color:var(--gold);background:linear-gradient(180deg,#2A2130,#221C28)}
+.mcard.sig{border-color:var(--gold);background:linear-gradient(180deg,#FBEAF0,#FFFFFF)}
 .mcard .mtag{position:absolute;top:16px;right:16px;font-size:10.5px;font-weight:700;letter-spacing:.08em;
   color:var(--cta);background:var(--gold-mark);border-radius:999px;padding:3px 9px}
 .mcard .mnum{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-faint)}
@@ -172,7 +140,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(23,19,26,.96);
   cursor:pointer;min-width:0;display:block}
 .glink img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:.5s}
 .glink::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(62,47,56,0) 60%,rgba(62,47,56,.20) 100%);opacity:0;transition:.3s}
+  background:linear-gradient(180deg,rgba(46,45,50,0) 60%,rgba(46,45,50,.20) 100%);opacity:0;transition:.3s}
 
 /* reserve */
 .reserve{background:var(--bg2)}
@@ -197,8 +165,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(23,19,26,.96);
 .field input,.field textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);
   background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:13px 15px;transition:.2s}
 .field textarea{min-height:96px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:#2A2230}
-.field input::placeholder,.field textarea::placeholder{color:var(--ink-faint)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:#fff}
 .consent{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink-soft);margin:4px 0 18px}
 .consent input{margin-top:3px;accent-color:var(--cta);flex:0 0 auto}
 .form-warn{display:none;font-size:13px;color:#9A6B3C;background:#F6EBD9;border-radius:9px;
@@ -221,7 +188,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(23,19,26,.96);
 .loc-row .lv{font-size:14.5px;color:var(--ink-soft);min-width:0}
 
 /* footer */
-footer{background:#0F0C12;color:#D8CCBA;padding:52px 0 40px}
+footer{background:var(--ink);color:#D8CCBA;padding:52px 0 40px}
 footer .fwrap{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
 footer .flogo{font-family:var(--script);font-size:36px;color:#fff;line-height:1}
 footer .ftag{font-size:13.5px;color:#A99C88;margin-top:8px;max-width:300px}
@@ -234,20 +201,20 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
 /* quickbar (mobile) */
 .quickbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
   background:var(--card);border-top:1px solid var(--line);
-  box-shadow:0 -6px 22px rgba(142,78,110,.12);padding-bottom:env(safe-area-inset-bottom)}
+  box-shadow:0 -6px 22px rgba(193,70,122,.12);padding-bottom:env(safe-area-inset-bottom)}
 .quickbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
   padding:9px 4px 8px;font-size:11px;color:var(--ink-soft)}
 .quickbar a.qmain{background:var(--cta);color:#fff;font-weight:600}
 .quickbar a svg{width:20px;height:20px}
 @media(max-width:767px){
   .quickbar{display:flex} body{padding-bottom:60px}
-  .hero-scrim{background:linear-gradient(180deg,rgba(23,19,26,.86) 0%,rgba(23,19,26,.72) 58%,rgba(23,19,26,.60) 100%)}
+  .hero-scrim{background:linear-gradient(180deg,rgba(248,248,250,.86) 0%,rgba(248,248,250,.72) 58%,rgba(248,248,250,.60) 100%)}
   .hero .lead{color:var(--ink);font-weight:600}
   .hero-cta{justify-content:center}
 }
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:120;background:rgba(42,32,40,.86);
+.lb{position:fixed;inset:0;z-index:120;background:rgba(32,31,35,.86);
   display:none;align-items:center;justify-content:center;padding:24px}
 .lb.open{display:flex}
 .lb img{max-width:92vw;max-height:84vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
@@ -266,11 +233,11 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
   .mcard:hover,.chan a:hover,.glink:hover img{transform:none}
 }
 @media(hover:hover){
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(142,78,110,.30)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(193,70,122,.30)}
   .btn-ghost:hover{border-color:var(--cta);color:var(--cta)}
   .nav-cta:hover{background:var(--cta-dk)}
   .menu a:hover{color:var(--ink)}
-  .mcard:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(142,78,110,.15)}
+  .mcard:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(193,70,122,.15)}
   .chan a:hover{border-color:var(--gold);transform:translateX(3px)}
   .glink:hover img{transform:scale(1.05)}
   .glink:hover::after{opacity:1}
@@ -325,14 +292,10 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"><img src="nu-hero.jpg" alt="네일어반의 레이스·펄 무드 젤네일 작업물" width="1400" height="1646"></div>
-    <div class="hero-aurora" aria-hidden="true"></div>
-    <div class="hero-sheen" aria-hidden="true"></div>
-    <div class="hero-mood" aria-hidden="true"></div>
     <div class="hero-scrim"></div>
-    <div class="hero-glitter" aria-hidden="true"></div>
     <div class="wrap">
       <div class="hero-inner">
-        <h1 class="holo">Nail<br>Urban<span class="kr">손끝을 <span class="mark mark-soft">오롯이 맡기는</span> 시간</span></h1>
+        <h1>Nail<br>Urban<span class="kr">손끝을 <span class="mark mark-soft">오롯이 맡기는</span> 시간</span></h1>
         <p class="lead">원장님께 톤과 무드를 맡기면, 당신에게 가장 어울리는 결로 완성해 드려요. 수원 프라이빗 네일 스튜디오, 네일어반입니다.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#reserve">예약 문의하기</a>
@@ -425,7 +388,7 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
             <span class="carrow">→</span>
           </a>
           <a href="https://www.instagram.com/nail.urban_/" target="_blank" rel="noopener" aria-label="인스타그램 nail.urban">
-            <span class="cico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#E87BAA" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="#E87BAA" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="#E87BAA"/></svg></span>
+            <span class="cico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#C1467A" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="#C1467A" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="#C1467A"/></svg></span>
             <span class="cmeta"><strong>인스타그램 DM</strong><span>@nail.urban_</span></span>
             <span class="carrow">→</span>
           </a>
@@ -443,7 +406,7 @@ footer .fcopy{width:100%;border-top:1px solid #5B5040;margin-top:30px;padding-to
             <button type="submit" class="btn btn-primary">문의 보내기</button>
           </div>
           <div class="form-ok" id="formOk">
-            <div class="ok-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.2 4.2L19 7" stroke="#E87BAA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="ok-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.2 4.2L19 7" stroke="#C1467A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <h3 class="serif" style="font-style:italic">Thank you</h3>
             <p class="fsub">문의가 접수되었어요. 확인 후 빠르게 연락드릴게요 ✦</p>
           </div>
