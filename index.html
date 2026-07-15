@@ -21,11 +21,11 @@
 :root{
   /* 웜 베이지·아이보리 (사장님 요청 2026-07-15, 레퍼=인스타 Notice 카드).
      ⚠️ 배경만 바꾸면 안 됨 — 잉크·라인·마크·푸터까지 전부 R>G>B 로 통일해야 톤이 맞는다. */
-  --bg:#F5F1EB; --bg2:#ECE6DB; --taupe:#B5A794; --card:#FDFCFA;
+  --bg:#F4F1EC; --bg2:#EBE6DC; --taupe:#B5A794; --card:#FCFCFB;
   --ink:#3B342A; --ink-soft:#6E6455; --ink-faint:#8C8272;
-  --gold:#9A7F58; --gold-mark:#E4DBCA;
+  --gold:#9A7F58; --gold-mark:#E2DACC;
   --cta:#7A6244; --cta-dk:#5E4A32;
-  --line:#E4DBCB; --line-soft:#EFEAE0;
+  --line:#E2DBCD; --line-soft:#EEEAE1;
   --serif:'Playfair Display','Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --myeong:'Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --script:'Parisienne','Playfair Display','Apple SD Gothic Neo',serif;
@@ -56,7 +56,7 @@ h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
 .mark{background:linear-gradient(180deg,transparent 58%,var(--gold-mark) 58%,var(--gold-mark) 92%,transparent 92%);
   padding:0 .08em}
 .nb{white-space:nowrap}
-.mark-soft{background:linear-gradient(180deg,transparent 58%,rgba(212,197,172,.55) 58%,rgba(212,197,172,.55) 90%,transparent 90%)}
+.mark-soft{background:linear-gradient(180deg,transparent 58%,rgba(210,199,180,.55) 58%,rgba(210,199,180,.55) 90%,transparent 90%)}
 
 /* specnote */
 .specnote{background:var(--ink);color:#EDE6D8;font-size:12.5px;line-height:1.5;
@@ -64,7 +64,7 @@ h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
 .specnote b{color:#fff;font-weight:600}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(245,241,235,.96);
+header{position:sticky;top:0;z-index:50;background:rgba(244,241,236,.96);
   border-bottom:1px solid var(--line-soft)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:9px;min-width:0}
@@ -85,7 +85,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(245,241,235,.96);
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:18px 44px;border-radius:0;font-size:13.5px;font-weight:500;
   letter-spacing:.14em;cursor:pointer;border:1px solid var(--cta-dk);
-  background:rgba(253,252,250,.78);color:var(--cta-dk);transition:color .35s ease,border-color .35s ease}
+  background:rgba(252,252,251,.78);color:var(--cta-dk);transition:color .35s ease,border-color .35s ease}
 .btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--cta-dk);
   transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .btn-ghost{border-color:var(--taupe);color:var(--ink)}
@@ -98,7 +98,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(245,241,235,.96);
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:52% 42%}
 .hero-scrim{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(90deg,rgba(245,241,235,.93) 0%,rgba(245,241,235,.70) 42%,rgba(245,241,235,.18) 78%,rgba(245,241,235,0) 100%)}
+  background:linear-gradient(90deg,rgba(244,241,236,.93) 0%,rgba(244,241,236,.70) 42%,rgba(244,241,236,.18) 78%,rgba(244,241,236,0) 100%)}
 .hero .wrap{position:relative;z-index:2}
 .hero-inner{max-width:610px;padding:40px 0}
 .hero h1{font-family:var(--serif);font-size:clamp(44px,7.6vw,80px);font-weight:500;
@@ -214,7 +214,7 @@ footer .fcopy{width:100%;border-top:1px solid #4B4436;margin-top:30px;padding-to
 .quickbar a svg{width:20px;height:20px}
 @media(max-width:767px){
   .quickbar{display:flex} body{padding-bottom:60px}
-  .hero-scrim{background:linear-gradient(180deg,rgba(245,241,235,.86) 0%,rgba(245,241,235,.72) 58%,rgba(245,241,235,.60) 100%)}
+  .hero-scrim{background:linear-gradient(180deg,rgba(244,241,236,.86) 0%,rgba(244,241,236,.72) 58%,rgba(244,241,236,.60) 100%)}
   .hero h1{margin-bottom:34px}
   .hero-cta{justify-content:flex-start}
 }
