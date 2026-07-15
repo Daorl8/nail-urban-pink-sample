@@ -21,11 +21,14 @@
 :root{
   /* 웜 베이지·아이보리 (사장님 요청 2026-07-15, 레퍼=인스타 Notice 카드).
      ⚠️ 배경만 바꾸면 안 됨 — 잉크·라인·마크·푸터까지 전부 R>G>B 로 통일해야 톤이 맞는다. */
-  --bg:#F7F2E9; --bg2:#EFE7D8; --taupe:#B5A794; --card:#FFFDF8;
-  --ink:#3B342A; --ink-soft:#6E6455; --ink-faint:#8C8272;
-  --gold:#9A7F58; --gold-mark:#E8DCC6;
+  /* 레퍼(사장님 인스타 Notice 카드) 실측 기반. ★ = 추출값 그대로.
+     ⚠️ 구조가 핵심: 밝은 면·잉크는 거의 중성(R-B≤13), 따뜻함은 중간톤에만.
+     전 밝기를 R>G>B 로 밀면 노란기가 돈다(실패 경험). */
+  --bg:#F6F2EF; --bg2:#EEEAE1; --taupe:#BCB2A6; --card:#FCFBFA;   /* ★bg ★bg2 = 중성 */
+  --ink:#33312E; --ink-soft:#696661; --ink-faint:#8A857D;         /* ★ink-soft = 채도 4% 무채색 */
+  --gold:#968062; --gold-mark:#E4D7C5;                            /* ★gold-mark = 웜 중간톤 */
   --cta:#7A6244; --cta-dk:#5E4A32;
-  --line:#E6DCC9; --line-soft:#F2EBDD;
+  --line:#DAD3C9; --line-soft:#E9E4DC;                            /* ★line */
   --serif:'Playfair Display','Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --myeong:'Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --script:'Parisienne','Playfair Display','Apple SD Gothic Neo',serif;
@@ -56,15 +59,15 @@ h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
 .mark{background:linear-gradient(180deg,transparent 58%,var(--gold-mark) 58%,var(--gold-mark) 92%,transparent 92%);
   padding:0 .08em}
 .nb{white-space:nowrap}
-.mark-soft{background:linear-gradient(180deg,transparent 58%,rgba(214,193,158,.55) 58%,rgba(214,193,158,.55) 90%,transparent 90%)}
+.mark-soft{background:linear-gradient(180deg,transparent 58%,rgba(228,215,197,.75) 58%,rgba(228,215,197,.75) 90%,transparent 90%)}
 
 /* specnote */
-.specnote{background:var(--ink);color:#EDE6D8;font-size:12.5px;line-height:1.5;
+.specnote{background:var(--ink);color:#E9E7E3;font-size:12.5px;line-height:1.5;
   text-align:center;padding:8px 18px;letter-spacing:.01em}
 .specnote b{color:#fff;font-weight:600}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.96);
+header{position:sticky;top:0;z-index:50;background:rgba(246,242,239,.96);
   border-bottom:1px solid var(--line-soft)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:9px;min-width:0}
@@ -85,7 +88,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.96);
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:18px 44px;border-radius:0;font-size:13.5px;font-weight:500;
   letter-spacing:.14em;cursor:pointer;border:1px solid var(--cta-dk);
-  background:rgba(255,253,248,.75);color:var(--cta-dk);transition:color .35s ease,border-color .35s ease}
+  background:rgba(252,251,250,.78);color:var(--cta-dk);transition:color .35s ease,border-color .35s ease}
 .btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--cta-dk);
   transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .btn-ghost{border-color:var(--taupe);color:var(--ink)}
@@ -98,7 +101,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.96);
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:52% 42%}
 .hero-scrim{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(90deg,rgba(247,242,233,.93) 0%,rgba(247,242,233,.70) 42%,rgba(247,242,233,.18) 78%,rgba(247,242,233,0) 100%)}
+  background:linear-gradient(90deg,rgba(246,242,239,.93) 0%,rgba(246,242,239,.70) 42%,rgba(246,242,239,.18) 78%,rgba(246,242,239,0) 100%)}
 .hero .wrap{position:relative;z-index:2}
 .hero-inner{max-width:610px;padding:40px 0}
 .hero h1{font-family:var(--serif);font-size:clamp(44px,7.6vw,80px);font-weight:500;
@@ -173,7 +176,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.96);
   cursor:pointer;min-width:0;display:block;height:100%}
 .glink img{width:100%;height:100%;object-fit:cover;transition:.5s;display:block}
 .glink::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(59,52,42,0) 60%,rgba(59,52,42,.20) 100%);opacity:0;transition:.3s}
+  background:linear-gradient(180deg,rgba(51,49,46,0) 60%,rgba(51,49,46,.20) 100%);opacity:0;transition:.3s}
 
 /* reserve */
 .reserve{background:var(--bg2)}
@@ -194,15 +197,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.96);
 .loc-row .lv{font-size:14.5px;color:var(--ink-soft);min-width:0}
 
 /* footer */
-footer{background:var(--ink);color:#D6CCBA;padding:52px 0 40px}
+footer{background:var(--ink);color:#CFCCC6;padding:52px 0 40px}
 footer .fwrap{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
 footer .flogo{font-family:var(--script);font-size:36px;color:#fff;line-height:1}
-footer .ftag{font-size:13.5px;color:#9C9282;margin-top:8px;max-width:300px}
+footer .ftag{font-size:13.5px;color:#95928C;margin-top:8px;max-width:300px}
 footer .fchan{display:flex;gap:12px;margin-top:4px}
-footer .fchan a{width:40px;height:40px;border-radius:0;border:1px solid #4F4739;
+footer .fchan a{width:40px;height:40px;border-radius:0;border:1px solid #4A4844;
   display:flex;align-items:center;justify-content:center;transition:.22s}
-footer .fcopy{width:100%;border-top:1px solid #4B4436;margin-top:30px;padding-top:20px;
-  font-size:12px;color:#8F8676;line-height:1.7}
+footer .fcopy{width:100%;border-top:1px solid #47453F;margin-top:30px;padding-top:20px;
+  font-size:12px;color:#8A8781;line-height:1.7}
 
 /* quickbar (mobile) */
 .quickbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
@@ -214,13 +217,13 @@ footer .fcopy{width:100%;border-top:1px solid #4B4436;margin-top:30px;padding-to
 .quickbar a svg{width:20px;height:20px}
 @media(max-width:767px){
   .quickbar{display:flex} body{padding-bottom:60px}
-  .hero-scrim{background:linear-gradient(180deg,rgba(247,242,233,.86) 0%,rgba(247,242,233,.72) 58%,rgba(247,242,233,.60) 100%)}
+  .hero-scrim{background:linear-gradient(180deg,rgba(246,242,239,.86) 0%,rgba(246,242,239,.72) 58%,rgba(246,242,239,.60) 100%)}
   .hero h1{margin-bottom:34px}
   .hero-cta{justify-content:flex-start}
 }
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:120;background:rgba(44,38,29,.88);
+.lb{position:fixed;inset:0;z-index:120;background:rgba(40,38,35,.88);
   display:none;align-items:center;justify-content:center;padding:24px}
 .lb.open{display:flex}
 .lb img{max-width:92vw;max-height:84vh;border-radius:0}
@@ -455,8 +458,8 @@ footer .fcopy{width:100%;border-top:1px solid #4B4436;margin-top:30px;padding-to
       <p class="ftag">수원시청역 도보 1분 · 국내 유일 네일 오마카세<br>only one design for you</p>
     </div>
     <div class="fchan">
-      <a href="https://www.instagram.com/nail.urban_/" target="_blank" rel="noopener" aria-label="인스타그램"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#D6CCBA" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="#D6CCBA" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="#D6CCBA"/></svg></a>
-      <a href="https://pf.kakao.com/_SmIwG" target="_blank" rel="noopener" aria-label="카카오톡 채널"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5.5c-3.6 0-6.5 2.3-6.5 5.1 0 1.8 1.2 3.4 3 4.3l-.7 2.6 2.9-1.7c.4.05.9.08 1.3.08 3.6 0 6.5-2.3 6.5-5.3S15.6 5.5 12 5.5z" stroke="#D6CCBA" stroke-width="1.6" stroke-linejoin="round"/></svg></a>
+      <a href="https://www.instagram.com/nail.urban_/" target="_blank" rel="noopener" aria-label="인스타그램"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#CFCCC6" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="#CFCCC6" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="#CFCCC6"/></svg></a>
+      <a href="https://pf.kakao.com/_SmIwG" target="_blank" rel="noopener" aria-label="카카오톡 채널"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5.5c-3.6 0-6.5 2.3-6.5 5.1 0 1.8 1.2 3.4 3 4.3l-.7 2.6 2.9-1.7c.4.05.9.08 1.3.08 3.6 0 6.5-2.3 6.5-5.3S15.6 5.5 12 5.5z" stroke="#CFCCC6" stroke-width="1.6" stroke-linejoin="round"/></svg></a>
     </div>
     <div class="fcopy">© 2026 Nail.urban. All rights reserved.<br>본 페이지는 이피웹(YIPI WEB)이 제작한 예시용 무료 시안이며, 실제 정보는 원장님 확인 후 반영됩니다.</div>
   </div>
