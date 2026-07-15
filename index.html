@@ -186,13 +186,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(246,242,239,.96);
 .res-hint{font-size:13px;color:var(--ink-soft);margin:0}
 /* QR = PC 전용. 폰에선 버튼을 그냥 누르면 되고, PC 에선 카톡 링크가 로그인 벽이라 QR 이 실제로 더 빠름 */
 .res-qr{display:none}
-.res-steps{list-style:none;margin:clamp(34px,4.5vw,48px) 0 0;padding:0;
-  display:grid;grid-template-columns:1fr;gap:12px}
+.steps-lead{text-align:center;font-size:14px;color:var(--ink-soft);margin:clamp(34px,4.5vw,48px) 0 14px}
+.res-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px}
 .res-steps li{background:var(--card);border:1px solid var(--line-soft);padding:20px 22px;
   display:flex;flex-direction:column;gap:3px}
-.res-steps .sn{font-family:var(--serif);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.12em}
+.res-steps .sn{font-size:13px;font-weight:500;color:var(--gold);letter-spacing:.14em;font-style:italic}
 .res-steps strong{font-size:15px;font-weight:700;color:var(--ink)}
-.res-steps .sd{font-size:13px;color:var(--ink-soft)}
+.res-steps .sd{font-size:13px;color:var(--ink-soft);line-height:1.65;margin-top:2px}
 @media(min-width:720px){
   .res-cta{flex-direction:row;justify-content:center;align-items:center;gap:clamp(28px,4vw,52px)}
   .res-qr{display:flex;flex-direction:column;align-items:center;gap:8px;
@@ -297,7 +297,7 @@ footer .fcopy{width:100%;border-top:1px solid #47453F;margin-top:30px;padding-to
 </head>
 <body>
 
-<div class="specnote">✦ 예시용 <b>무료 시안</b>입니다 · 가격·주소·<b>예약 순서</b>·링크는 <b>원장님 확인 후</b> 실제 정보로 반영됩니다</div>
+<div class="specnote">✦ 예시용 <b>무료 시안</b>입니다 · 가격·주소·예약 링크는 <b>원장님 확인 후</b> 실제 정보로 반영됩니다</div>
 
 <header>
   <div class="wrap nav">
@@ -435,10 +435,11 @@ footer .fcopy{width:100%;border-top:1px solid #47453F;margin-top:30px;padding-to
         </div>
       </div>
 
+      <p class="steps-lead rv">오마카세는 이렇게 진행돼요</p>
       <ol class="res-steps rv">
-        <li><span class="sn">01</span><strong>카카오톡 채널 추가</strong><span class="sd">위 버튼이나 QR로 채널을 추가해요</span></li>
-        <li><span class="sn">02</span><strong>날짜 · 원하는 느낌 남기기</strong><span class="sd">오마카세를 원하시면 맡겨만 주셔도 돼요</span></li>
-        <li><span class="sn">03</span><strong>예약금 입금 후 확정</strong><span class="sd">입금이 확인되면 예약이 확정돼요</span></li>
+        <li><span class="sn en serif">STEP 1</span><strong>아트 스타일 정하기</strong><span class="sd">대충이라도 원하는 느낌과 포인트만 정해주세요. 평소 하고 싶었던 아트를 다 넣으셔도 좋아요.</span></li>
+        <li><span class="sn en serif">STEP 2</span><strong>디자인하기</strong><span class="sd">기본 틀은 제가 취향에 맞게 잡아드려요. 마음에 안 드는 곳은 말씀만 하시면 하나하나 고쳐드려요.</span></li>
+        <li><span class="sn en serif">STEP 3</span><strong>하나뿐인 디자인 완성</strong><span class="sd">세상에 하나밖에 없는, 나만을 위한 디자인이 나와요.</span></li>
       </ol>
       <div class="res-note rv">
         <strong>예약 안내</strong>
