@@ -190,7 +190,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(246,242,239,.96);
 .res-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px}
 .res-steps li{background:var(--card);border:1px solid var(--line-soft);padding:20px 22px;
   display:flex;flex-direction:column;gap:3px}
-.res-steps .sn{font-size:13px;font-weight:500;color:var(--gold);letter-spacing:.14em;font-style:italic}
+.res-steps .sn{font-size:13px;font-weight:500;color:var(--cta);letter-spacing:.14em;font-style:italic}  /* gold 는 3:1 등급(테두리·문양 전용) — 텍스트엔 cta */
 .res-steps strong{font-size:15px;font-weight:700;color:var(--ink)}
 .res-steps .sd{font-size:13px;color:var(--ink-soft);line-height:1.65;margin-top:2px}
 @media(min-width:720px){
@@ -429,7 +429,7 @@ footer .fcopy{width:100%;border-top:1px solid #47453F;margin-top:30px;padding-to
           </a>
           <p class="res-hint">채널 추가 후 메시지를 남겨주세요</p>
         </div>
-        <div class="res-qr">
+        <div class="res-qr" aria-hidden="true">
           <img src="nu-kko-qr.svg" alt="" width="118" height="118">
           <span>폰으로 찍으면<br>바로 열려요</span>
         </div>
