@@ -189,6 +189,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.96);
 .loc-row{display:flex;gap:13px;padding:15px 0;border-bottom:1px solid var(--line-soft);min-width:0}
 .loc-row:last-child{border-bottom:0}
 .loc-row .lk{flex:0 0 96px;font-size:13px;font-weight:700;color:var(--cta-dk);letter-spacing:.02em}
+.loc-row .lnav{color:var(--cta-dk);border-bottom:1px solid var(--line);transition:border-color .25s ease}
+@media(hover:hover){ .loc-row .lnav:hover{border-color:var(--cta-dk)} }
 .loc-row .lv{font-size:14.5px;color:var(--ink-soft);min-width:0}
 
 /* footer */
@@ -274,7 +276,7 @@ footer .fcopy{width:100%;border-top:1px solid #4B4436;margin-top:30px;padding-to
 </head>
 <body>
 
-<div class="specnote">✦ 예시용 <b>무료 시안</b>입니다 · 가격·영업시간·주소·예약 링크는 <b>원장님 확인 후</b> 실제 정보로 반영됩니다</div>
+<div class="specnote">✦ 예시용 <b>무료 시안</b>입니다 · 가격·주소·예약 링크는 <b>원장님 확인 후</b> 실제 정보로 반영됩니다</div>
 
 <header>
   <div class="wrap nav">
@@ -431,12 +433,15 @@ footer .fcopy{width:100%;border-top:1px solid #4B4436;margin-top:30px;padding-to
           <div class="loc-row"><span class="lk">주소</span><span class="lv">경기 수원시 팔달구 효원로 278<br>파비오더시타 2층 278호 <span style="opacity:.62">(인계동 1125-1)</span></span></div>
           <div class="loc-row"><span class="lk">찾아오기</span><span class="lv">수원시청역 1·2번 출구에서 도보 1분<br>뷰티라운지 앞, 에스컬레이터 바로 앞이에요</span></div>
           <div class="loc-row"><span class="lk">예약</span><span class="lv">100% 예약제 · 카카오톡으로만 받아요 (DM은 받지 않습니다)</span></div>
-          <div class="loc-row"><span class="lk">영업시간</span><span class="lv">확정 후 안내 <span style="opacity:.62">(원장님 확인 후 기입)</span></span></div>
+          <div class="loc-row"><span class="lk">네이버</span><span class="lv"><a class="lnav" href="https://map.naver.com/p/entry/place/1767082726" target="_blank" rel="noopener">네이버 플레이스에서 보기 →</a></span></div>
           <div class="loc-row"><span class="lk">주차</span><span class="lv">건물 지하 3층부터 주차 가능</span></div>
         </div>
         <div class="loc-map rv">
           <iframe title="네일어반 위치 지도" src="https://www.google.com/maps/embed?pb=!1m4!3m2!1m1!2zMzfCsDE1JzM5LjkiTiAxMjfCsDAxJzU1LjgiRQ!5e0!3m2!1sko!2skr!4v1784004281669!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=37.2610836%2C127.0321562" target="_blank" rel="noopener">구글맵으로 길찾기 →</a>
+          <a class="map-btn" href="https://map.naver.com/p/entry/place/1767082726" target="_blank" rel="noopener"
+             aria-label="네이버 플레이스에서 네일어반 위치·길찾기 보기 (새 창으로 열림)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="vertical-align:-2px;margin-right:7px"><rect width="24" height="24" rx="4" fill="#03C75A"/><path d="M14.2 12.1 9.6 5.6H6v12.8h3.8v-6.5l4.6 6.5H18V5.6h-3.8v6.5z" fill="#fff"/></svg>네이버 지도로 길찾기 →
+          </a>
         </div>
       </div>
     </div>
