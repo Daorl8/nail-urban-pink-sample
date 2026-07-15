@@ -19,11 +19,13 @@
 <script>document.documentElement.classList.add('js');</script>
 <style>
 :root{
-  --bg:#F8F8FA; --bg2:#EEEDF1; --taupe:#ABA9B2; --card:#FFFFFF;
-  --ink:#2F2E33; --ink-soft:#6B6873; --ink-faint:#8A8794;
-  --gold:#DB5E88; --gold-mark:#F5C6D7;
-  --cta:#C1467A; --cta-dk:#A73A67;
-  --line:#E6E4EA; --line-soft:#F1EFF4;
+  /* 웜 베이지·아이보리 (사장님 요청 2026-07-15, 레퍼=인스타 Notice 카드).
+     ⚠️ 배경만 바꾸면 안 됨 — 잉크·라인·마크·푸터까지 전부 R>G>B 로 통일해야 톤이 맞는다. */
+  --bg:#F7F2E9; --bg2:#EFE7D8; --taupe:#B5A794; --card:#FFFDF8;
+  --ink:#3B342A; --ink-soft:#6E6455; --ink-faint:#8C8272;
+  --gold:#9A7F58; --gold-mark:#E8DCC6;
+  --cta:#7A6244; --cta-dk:#5E4A32;
+  --line:#E6DCC9; --line-soft:#F2EBDD;
   --serif:'Playfair Display','Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --myeong:'Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
   --script:'Parisienne','Playfair Display','Apple SD Gothic Neo',serif;
@@ -44,9 +46,9 @@ h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
 .sec{padding:clamp(62px,10vw,104px) 0;position:relative;overflow:hidden}
 .deco-layer{position:absolute;left:50%;top:0;transform:translateX(-50%);
   width:min(1280px,100%);height:100%;pointer-events:none;z-index:0}
-.deco{position:absolute;color:var(--gold);opacity:.42;line-height:0}
+.deco{position:absolute;color:var(--gold);opacity:.30;line-height:0}  /* 웜 gold 는 로즈보다 진해서 .42 면 셈 */
 /* 모바일: 문양을 더 은은하게. (겹침 방지는 위치로 해결 — .band 는 섹션 상하 패딩 띠 안에만 둔다) */
-@media(max-width:640px){ .deco{opacity:.3} }
+@media(max-width:640px){ .deco{opacity:.22} }
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;
   color:var(--ink-soft);margin:0 0 16px}
 .serif{font-family:var(--serif)}
@@ -54,15 +56,15 @@ h1,h2,h3{margin:0;line-height:1.26;text-wrap:balance}
 .mark{background:linear-gradient(180deg,transparent 58%,var(--gold-mark) 58%,var(--gold-mark) 92%,transparent 92%);
   padding:0 .08em}
 .nb{white-space:nowrap}
-.mark-soft{background:linear-gradient(180deg,transparent 58%,rgba(232,150,185,.40) 58%,rgba(232,150,185,.40) 90%,transparent 90%)}
+.mark-soft{background:linear-gradient(180deg,transparent 58%,rgba(214,193,158,.55) 58%,rgba(214,193,158,.55) 90%,transparent 90%)}
 
 /* specnote */
-.specnote{background:var(--ink);color:#E9E7EC;font-size:12.5px;line-height:1.5;
+.specnote{background:var(--ink);color:#EDE6D8;font-size:12.5px;line-height:1.5;
   text-align:center;padding:8px 18px;letter-spacing:.01em}
 .specnote b{color:#fff;font-weight:600}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(248,248,250,.96);
+header{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.96);
   border-bottom:1px solid var(--line-soft)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:9px;min-width:0}
@@ -83,7 +85,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(248,248,250,.96);
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:18px 44px;border-radius:0;font-size:13.5px;font-weight:500;
   letter-spacing:.14em;cursor:pointer;border:1px solid var(--cta-dk);
-  background:rgba(255,255,255,.72);color:var(--cta-dk);transition:color .35s ease,border-color .35s ease}
+  background:rgba(255,253,248,.75);color:var(--cta-dk);transition:color .35s ease,border-color .35s ease}
 .btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--cta-dk);
   transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .btn-ghost{border-color:var(--taupe);color:var(--ink)}
@@ -96,7 +98,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(248,248,250,.96);
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:52% 42%}
 .hero-scrim{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(90deg,rgba(248,248,250,.93) 0%,rgba(248,248,250,.70) 42%,rgba(248,248,250,.18) 78%,rgba(248,248,250,0) 100%)}
+  background:linear-gradient(90deg,rgba(247,242,233,.93) 0%,rgba(247,242,233,.70) 42%,rgba(247,242,233,.18) 78%,rgba(247,242,233,0) 100%)}
 .hero .wrap{position:relative;z-index:2}
 .hero-inner{max-width:610px;padding:40px 0}
 .hero h1{font-family:var(--serif);font-size:clamp(44px,7.6vw,80px);font-weight:500;
@@ -171,43 +173,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(248,248,250,.96);
   cursor:pointer;min-width:0;display:block;height:100%}
 .glink img{width:100%;height:100%;object-fit:cover;transition:.5s;display:block}
 .glink::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(46,45,50,0) 60%,rgba(46,45,50,.20) 100%);opacity:0;transition:.3s}
+  background:linear-gradient(180deg,rgba(59,52,42,0) 60%,rgba(59,52,42,.20) 100%);opacity:0;transition:.3s}
 
 /* reserve */
 .reserve{background:var(--bg2)}
-.res-grid{display:grid;gap:clamp(18px,2.4vw,26px);grid-template-columns:1fr;
-  max-width:620px;margin-left:auto;margin-right:auto}
-.chan{display:grid;gap:12px}
-.chan a{display:flex;align-items:center;gap:15px;background:var(--card);border:1px solid var(--line);
-  border-radius:0;padding:17px 20px;min-width:0;transition:.22s}
-.chan .cico{flex:0 0 auto;width:42px;height:42px;border-radius:0;display:flex;
-  align-items:center;justify-content:center;background:var(--bg)}
-.chan .cmeta{min-width:0}
-.chan .cmeta strong{display:block;font-size:15px;font-weight:700}
-.chan .cmeta span{font-size:13px;color:var(--ink-soft);overflow-wrap:anywhere}
-.chan .carrow{margin-left:auto;color:var(--ink-faint);flex:0 0 auto}
+.res-cta{display:flex;flex-direction:column;align-items:center;gap:12px}
+.res-cta .btn{font-size:15px;padding:20px 44px;gap:11px}
+.res-hint{font-size:13px;color:var(--ink-soft);margin:0}
 
-/* form */
-.form{background:var(--card);border:1px solid var(--line);border-radius:0;padding:clamp(24px,3.4vw,34px)}
-.form h3{font-size:19px;font-weight:800;margin:0 0 6px}
-.form .fsub{font-size:13.5px;color:var(--ink-soft);margin:0 0 22px}
-.field{margin-bottom:16px}
-.field label{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:7px}
-.field input,.field textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);
-  background:var(--bg);border:1px solid var(--line);border-radius:0;padding:13px 15px;transition:.2s}
-.field textarea{min-height:96px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:#fff}
-.consent{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink-soft);margin:4px 0 18px}
-.consent input{margin-top:3px;accent-color:var(--cta);flex:0 0 auto}
-.form-warn{display:none;font-size:13px;color:#A0234C;background:#FBEAF0;border-radius:0;
-  padding:9px 13px;margin-bottom:14px}
-.form-warn.show{display:block}
-.form .btn-primary{width:100%}
-.form-ok{display:none;text-align:center;padding:20px 0}
-.form-ok.show{display:block}
-.form-ok .ok-ico{width:54px;height:54px;margin:0 auto 12px;border-radius:0;
-  background:var(--bg2);display:flex;align-items:center;justify-content:center}
-.form-ok h3{margin-bottom:6px}
 
 /* location */
 .loc-grid{display:grid;gap:26px;grid-template-columns:1fr}
@@ -219,15 +192,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(248,248,250,.96);
 .loc-row .lv{font-size:14.5px;color:var(--ink-soft);min-width:0}
 
 /* footer */
-footer{background:var(--ink);color:#CFCBD4;padding:52px 0 40px}
+footer{background:var(--ink);color:#D6CCBA;padding:52px 0 40px}
 footer .fwrap{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
 footer .flogo{font-family:var(--script);font-size:36px;color:#fff;line-height:1}
-footer .ftag{font-size:13.5px;color:#96939C;margin-top:8px;max-width:300px}
+footer .ftag{font-size:13.5px;color:#9C9282;margin-top:8px;max-width:300px}
 footer .fchan{display:flex;gap:12px;margin-top:4px}
-footer .fchan a{width:40px;height:40px;border-radius:0;border:1px solid #4A4750;
+footer .fchan a{width:40px;height:40px;border-radius:0;border:1px solid #4F4739;
   display:flex;align-items:center;justify-content:center;transition:.22s}
-footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-top:20px;
-  font-size:12px;color:#8B8892;line-height:1.7}
+footer .fcopy{width:100%;border-top:1px solid #4B4436;margin-top:30px;padding-top:20px;
+  font-size:12px;color:#8F8676;line-height:1.7}
 
 /* quickbar (mobile) */
 .quickbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
@@ -239,13 +212,13 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
 .quickbar a svg{width:20px;height:20px}
 @media(max-width:767px){
   .quickbar{display:flex} body{padding-bottom:60px}
-  .hero-scrim{background:linear-gradient(180deg,rgba(248,248,250,.86) 0%,rgba(248,248,250,.72) 58%,rgba(248,248,250,.60) 100%)}
+  .hero-scrim{background:linear-gradient(180deg,rgba(247,242,233,.86) 0%,rgba(247,242,233,.72) 58%,rgba(247,242,233,.60) 100%)}
   .hero h1{margin-bottom:34px}
   .hero-cta{justify-content:flex-start}
 }
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:120;background:rgba(32,31,35,.86);
+.lb{position:fixed;inset:0;z-index:120;background:rgba(44,38,29,.88);
   display:none;align-items:center;justify-content:center;padding:24px}
 .lb.open{display:flex}
 .lb img{max-width:92vw;max-height:84vh;border-radius:0}
@@ -261,7 +234,7 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
 
 /* touch: kill sticky hover lift */
 @media(hover:none){
-  .mcard:hover,.chan a:hover,.glink:hover img{transform:none}
+  .mcard:hover,.glink:hover img{transform:none}
 }
 @media(hover:hover){
   .btn:hover,.nav-cta:hover{color:#fff}
@@ -270,7 +243,6 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
   .map-btn:hover{background:var(--cta-dk);color:#fff}
   .menu a:hover{color:var(--ink)}
   .mcard:hover{border-color:var(--gold)}
-  .chan a:hover{border-color:var(--gold);transform:translateX(3px)}
   .glink:hover img{transform:scale(1.05)}
   .glink:hover::after{opacity:1}
   footer .fchan a:hover{border-color:var(--gold);color:#fff}
@@ -426,32 +398,12 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
         <h2 class="krh">예약 · 문의</h2>
         <p>예약은 카카오톡으로만 받습니다.<br>날짜와 원하는 느낌을 남겨주세요.</p>
       </div>
-      <div class="res-grid">
-        <form class="form" id="reserveForm" novalidate>
-          <div id="formBody">
-            <h3>예약 문의 남기기</h3>
-            <p class="fsub">남겨주시면 카카오톡으로 연락드립니다.</p>
-            <div id="formWarn" class="form-warn" role="alert"></div>
-            <div class="field"><label for="fname">성함</label><input id="fname" type="text" placeholder="예약자 성함" autocomplete="name"></div>
-            <div class="field"><label for="fcontact">연락처</label><input id="fcontact" type="text" placeholder="연락 가능한 번호" autocomplete="off"></div>
-            <div class="field"><label for="fmsg">원하는 디자인 · 날짜</label><textarea id="fmsg" placeholder="예) 날짜·시간 / 젤제거·연장 유무 / 원하는 시술·느낌 (오마카세 가능!)"></textarea></div>
-            <label class="consent"><input id="fagree" type="checkbox"><span>예약 문의 응대를 위한 개인정보 수집·이용에 동의합니다.</span></label>
-            <button type="submit" class="btn btn-primary">문의 보내기</button>
-          </div>
-          <div class="form-ok" id="formOk">
-            <div class="ok-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.2 4.2L19 7" stroke="#C1467A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <h3 class="serif" style="font-style:italic">Thank you</h3>
-            <p class="fsub">문의가 접수되었어요. 확인 후 빠르게 연락드릴게요 ✦</p>
-          </div>
-        </form>
-
-        <div class="chan rv">
-          <a href="https://pf.kakao.com/_SmIwG" target="_blank" rel="noopener" aria-label="카카오톡 채널 nail.urban">
-            <span class="cico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#FEE500"/><path d="M12 6.4c-3.2 0-5.8 2-5.8 4.5 0 1.6 1.1 3 2.7 3.8l-.6 2.3 2.6-1.5c.4.05.7.07 1.1.07 3.2 0 5.8-2 5.8-4.6S15.2 6.4 12 6.4z" fill="#3B1E1E"/></svg></span>
-            <span class="cmeta"><strong>카카오톡 채널</strong><span>예약·문의는 여기로</span></span>
-            <span class="carrow">→</span>
-          </a>
-        </div>
+      <div class="res-cta rv">
+        <a class="btn btn-primary btn-kko" href="https://pf.kakao.com/_SmIwG" target="_blank" rel="noopener"
+           aria-label="카카오톡 채널로 예약 문의하기 (새 창으로 열림)">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#FEE500"/><path d="M12 6.4c-3.2 0-5.8 2-5.8 4.5 0 1.6 1.1 3 2.7 3.8l-.6 2.3 2.6-1.5c.4.05.7.07 1.1.07 3.2 0 5.8-2 5.8-4.6S15.2 6.4 12 6.4z" fill="#3B1E1E"/></svg>카카오톡으로 예약 문의
+        </a>
+        <p class="res-hint">채널 추가 후 메시지를 남겨주세요</p>
       </div>
       <div class="res-note rv">
         <strong>예약 안내</strong>
@@ -498,8 +450,8 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
       <p class="ftag">수원시청역 도보 1분 · 국내 유일 네일 오마카세<br>only one design for you</p>
     </div>
     <div class="fchan">
-      <a href="https://www.instagram.com/nail.urban_/" target="_blank" rel="noopener" aria-label="인스타그램"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#CFCBD4" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="#CFCBD4" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="#CFCBD4"/></svg></a>
-      <a href="https://pf.kakao.com/_SmIwG" target="_blank" rel="noopener" aria-label="카카오톡 채널"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5.5c-3.6 0-6.5 2.3-6.5 5.1 0 1.8 1.2 3.4 3 4.3l-.7 2.6 2.9-1.7c.4.05.9.08 1.3.08 3.6 0 6.5-2.3 6.5-5.3S15.6 5.5 12 5.5z" stroke="#CFCBD4" stroke-width="1.6" stroke-linejoin="round"/></svg></a>
+      <a href="https://www.instagram.com/nail.urban_/" target="_blank" rel="noopener" aria-label="인스타그램"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#D6CCBA" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="#D6CCBA" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="#D6CCBA"/></svg></a>
+      <a href="https://pf.kakao.com/_SmIwG" target="_blank" rel="noopener" aria-label="카카오톡 채널"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5.5c-3.6 0-6.5 2.3-6.5 5.1 0 1.8 1.2 3.4 3 4.3l-.7 2.6 2.9-1.7c.4.05.9.08 1.3.08 3.6 0 6.5-2.3 6.5-5.3S15.6 5.5 12 5.5z" stroke="#D6CCBA" stroke-width="1.6" stroke-linejoin="round"/></svg></a>
     </div>
     <div class="fcopy">© 2026 Nail.urban. All rights reserved.<br>본 페이지는 이피웹(YIPI WEB)이 제작한 예시용 무료 시안이며, 실제 정보는 원장님 확인 후 반영됩니다.</div>
   </div>
@@ -599,26 +551,6 @@ footer .fcopy{width:100%;border-top:1px solid #46434C;margin-top:30px;padding-to
     document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&lb.classList.contains('open')){lb.classList.remove('open');if(lbImg){lbImg.src='';lbImg.alt='';}}});
   }
 
-  var form=document.getElementById('reserveForm');
-  if(form){
-    var warn=document.getElementById('formWarn'), body=document.getElementById('formBody'), ok=document.getElementById('formOk'), sent=false;
-    form.addEventListener('submit',function(ev){
-      ev.preventDefault();
-      if(sent)return;
-      var nm=(document.getElementById('fname').value||'').trim();
-      var ct=(document.getElementById('fcontact').value||'').trim();
-      var ag=document.getElementById('fagree').checked;
-      var m='',bad=null;
-      if(!nm){m='성함을 입력해 주세요.';bad=document.getElementById('fname');}
-      else if(!ct){m='연락 가능한 번호를 남겨주세요.';bad=document.getElementById('fcontact');}
-      else if(!ag){m='개인정보 수집·이용에 동의해 주세요.';bad=document.getElementById('fagree');}
-      if(m){if(warn){warn.textContent=m;warn.classList.add('show');}if(bad)bad.focus();return;}
-      if(warn)warn.classList.remove('show');
-      sent=true;
-      if(body)body.style.display='none';
-      if(ok)ok.classList.add('show');
-    });
-  }
 })();
 </script>
 </body>
