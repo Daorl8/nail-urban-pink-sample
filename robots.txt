@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 네이버 검색로봇 (서치어드바이저 수집 대상)
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://nail-urban-pink-sample.lgt3232.workers.dev/sitemap.xml
